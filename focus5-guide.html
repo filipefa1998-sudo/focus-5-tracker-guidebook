@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus 5 Tracker - Complete Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); }
+        .section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        .step-number { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); }
+        .screenshot-box { border: 4px solid #667eea; border-radius: 20px; padding: 20px; background: white; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); }
+        .code-badge { display: inline-block; padding: 4px 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 14px; margin: 2px; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <!-- Hero Section -->
+    <div class="section gradient-bg">
+        <div class="text-center text-white max-w-5xl mx-auto fade-in-up">
+            <div class="text-8xl mb-6">📋</div>
+            <h1 class="text-6xl md:text-7xl font-black mb-6 leading-tight">Focus 5 Missionary Tracker</h1>
+            <p class="text-2xl md:text-3xl mb-8 text-indigo-100 font-medium">The Complete User Guide</p>
+            <div class="bg-white/20 backdrop-blur-md rounded-2xl p-8 mb-8 max-w-3xl mx-auto">
+                <p class="text-xl italic leading-relaxed">"And if it so be that you should labor all your days in crying repentance unto this people, and bring, save it be one soul unto me, how great shall be your joy with him in the kingdom of my Father!"</p>
+                <p class="text-sm mt-3 text-indigo-200">— Doctrine & Covenants 18:15</p>
+            </div>
+            <a href="#overview" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-xl text-xl font-bold hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-2xl">Get Started →</a>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <div id="overview" class="section">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black gradient-text mb-12 text-center">What is Focus 5?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <div class="text-6xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Track Investigators</h3>
+                    <p class="text-gray-700">Monitor current investigators and their progress toward baptism. Track invitations extended and covenant path milestones.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <div class="text-6xl mb-4">💙</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Fellowship Less Active</h3>
+                    <p class="text-gray-700">Support less-active members and part-member families. Record fellowship activities and engagement efforts.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <div class="text-6xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Live Analytics</h3>
+                    <p class="text-gray-700">Real-time KPI dashboard with charts and metrics. Auto-syncs across all devices instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step by Step Guide -->
+    <div class="section bg-gradient-to-br from-white to-indigo-50">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-5xl font-black gradient-text mb-16 text-center">Step-by-Step Guide</h2>
+            
+            <!-- Step 1 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Add an Investigator or Family</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <p class="text-lg text-gray-700 mb-4">Click the <span class="font-bold text-indigo-600">"+ Add Investigator"</span> or <span class="font-bold text-blue-600">"+ Add Family"</span> button at the top of each table.</p>
+                            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="text-3xl">💡</div>
+                                    <p class="font-bold text-lg text-gray-900">Pro Tip:</p>
+                                </div>
+                                <p class="text-gray-700">Fill out the <strong>Name</strong> and <strong>Assigned To</strong> fields immediately. This helps everyone know who's responsible for each person.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Track Monthly Activities</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <p class="text-lg text-gray-700 mb-6">Click any <span class="font-bold text-indigo-600">month cell</span> (Jan, Feb, Mar, etc.) to open the activity modal and select what happened that month.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold text-xl mb-3 text-indigo-900">🎯 For Investigators:</h4>
+                                    <div class="space-y-2">
+                                        <div><span class="code-badge">RB</span> Read Book of Mormon</div>
+                                        <div><span class="code-badge">AC</span> Attend Church</div>
+                                        <div><span class="code-badge">AA</span> Attend Activity</div>
+                                        <div><span class="code-badge">FHE</span> Attend FHE</div>
+                                        <div><span class="code-badge">TM</span> Taught by Missionaries</div>
+                                        <div><span class="code-badge">PB</span> Pray about BOM</div>
+                                        <div><span class="code-badge">BD</span> Baptismal Date Set</div>
+                                        <div><span class="code-badge">BC</span> Baptism Completed ✨</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-3 text-blue-900">💙 For Less Active:</h4>
+                                    <div class="space-y-2">
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">SRV</span> Service</div>
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">AI</span> Activity Invited</div>
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">AAT</span> Activity Attended</div>
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">VIS</span> Visit</div>
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">IFH</span> Invited Family History</div>
+                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">TXT</span> Text/Call</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Unlock the Covenant Path</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <p class="text-lg text-gray-700 mb-4">When you mark <span class="code-badge">BC</span> (Baptism Completed), a special <span class="font-bold text-green-600">Covenant Path</span> section appears below that investigator!</p>
+                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
+                                <h4 class="font-bold text-xl mb-4 text-green-900">📖 Track Post-Baptism Progress:</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">✋</div>
+                                        <div class="text-sm font-semibold">Confirmation</div>
+                                    </div>
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">🕊️</div>
+                                        <div class="text-sm font-semibold">Holy Ghost Gift</div>
+                                    </div>
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">🍞</div>
+                                        <div class="text-sm font-semibold">Sacrament</div>
+                                    </div>
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">👔</div>
+                                        <div class="text-sm font-semibold">Priesthood</div>
+                                    </div>
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">🏛️</div>
+                                        <div class="text-sm font-semibold">Temple</div>
+                                    </div>
+                                    <div class="bg-white/60 rounded-lg p-3 text-center">
+                                        <div class="text-2xl mb-1">📞</div>
+                                        <div class="text-sm font-semibold">Calling</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">View KPI Analytics</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <p class="text-lg text-gray-700 mb-6">Switch between different time views to analyze your ward's missionary efforts:</p>
+                            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-6 text-center">
+                                    <div class="text-3xl mb-2">📅</div>
+                                    <div class="font-bold text-lg">This Month</div>
+                                    <div class="text-sm opacity-90 mt-1">Current month only</div>
+                                </div>
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-6 text-center">
+                                    <div class="text-3xl mb-2">📊</div>
+                                    <div class="font-bold text-lg">Last 3 Months</div>
+                                    <div class="text-sm opacity-90 mt-1">Quarterly view</div>
+                                </div>
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-6 text-center">
+                                    <div class="text-3xl mb-2">📈</div>
+                                    <div class="font-bold text-lg">Year to Date</div>
+                                    <div class="text-sm opacity-90 mt-1">Jan through current</div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-2 border-orange-200">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="text-3xl">📊</div>
+                                    <p class="font-bold text-lg text-gray-900">What You'll See:</p>
+                                </div>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><strong>👥 Total People:</strong> All investigators + less-active families</li>
+                                    <li><strong>⭐ Active Focus 5:</strong> People with activities in selected timeframe</li>
+                                    <li><strong>📈 Total Activities:</strong> Sum of all invitations and fellowship</li>
+                                    <li><strong>🎯 Engagement Rate:</strong> % of people actively engaged</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Auto-Save & Live Sync</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border-2 border-green-200 mb-6">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="text-5xl">🔄</div>
+                                    <div>
+                                        <h4 class="font-bold text-2xl text-green-900">Everything Saves Automatically!</h4>
+                                        <p class="text-green-700 text-lg">No need to click "Save" — changes sync instantly</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4 text-gray-700 text-lg">
+                                <div class="flex items-start gap-3">
+                                    <div class="text-2xl">✅</div>
+                                    <p><strong>Multiple people can use it at once</strong> — Ward mission leader, missionaries, bishopric, etc.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="text-2xl">✅</div>
+                                    <p><strong>Changes appear instantly</strong> — If someone adds data, you'll see it immediately</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="text-2xl">✅</div>
+                                    <p><strong>Works on all devices</strong> — Phone, tablet, laptop, desktop — all stay in sync</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="text-2xl">✅</div>
+                                    <p><strong>Watch the indicator</strong> — Bottom right shows "Syncing..." → "✓ Saved"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="mb-20 fade-in-up">
+                <div class="flex items-start gap-6">
+                    <div class="step-number flex-shrink-0">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Export & Backup</h3>
+                        <div class="glass-card rounded-2xl p-8 mb-6">
+                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-blue-200 mb-6">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="text-3xl">📥</div>
+                                    <p class="font-bold text-xl text-gray-900">Export Your Data Weekly</p>
+                                </div>
+                                <p class="text-gray-700 text-lg">Click the <strong>"📥 Export"</strong> button in the header to download a JSON backup file.</p>
+                            </div>
+                            <div class="space-y-3 text-gray-700">
+                                <div class="flex items-start gap-3">
+                                    <div class="text-xl">💾</div>
+                                    <p><strong>Keep backups</strong> — Store weekly exports in Google Drive or OneDrive</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="text-xl">📧</div>
+                                    <p><strong>Share with leadership</strong> — Email exports to bishopric for records</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="text-xl">🖨️</div>
+                                    <p><strong>Print for meetings</strong> — Use "🖨️ Print" button for ward council</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Questions -->
+    <div class="section">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-5xl font-black gradient-text mb-16 text-center">Common Questions</h2>
+            <div class="space-y-6">
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-900">❓ Can multiple people use this at the same time?</h3>
+                    <p class="text-gray-700 text-lg">Yes! Everyone who has the link can use it simultaneously. Changes sync in real-time across all devices.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-900">❓ What if I accidentally delete someone?</h3>
+                    <p class="text-gray-700 text-lg">Use your weekly backup! The Export feature saves all your data. You can also contact your ward's tech admin if you exported recently.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-900">❓ How do I share this with my ward?</h3>
+                    <p class="text-gray-700 text-lg">Simply share the URL link! Anyone with the link can view and edit. Consider sharing it in your ward's group chat or email.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-900">❓ Does this work on mobile?</h3>
+                    <p class="text-gray-700 text-lg">Yes! The tracker is fully responsive and works great on phones and tablets. Perfect for missionaries on the go.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-900">❓ Can I customize the activity codes?</h3>
+                    <p class="text-gray-700 text-lg">The codes are standardized for consistency across wards. If you need custom tracking, add details in the "Notes" column for each person.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="section bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black mb-16 text-center">Best Practices</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-3">Update Weekly</h3>
+                    <p class="text-indigo-100 text-lg">Make it a habit to update the tracker after Sunday services or weekly coordination meetings.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="text-2xl font-bold mb-3">Assign Clearly</h3>
+                    <p class="text-indigo-100 text-lg">Always fill out the "Assigned To" field so everyone knows who's responsible for follow-up.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <div class="text-5xl mb-4">💾</div>
+                    <h3 class="text-2xl font-bold mb-3">Export Regularly</h3>
+                    <p class="text-indigo-100 text-lg">Download a backup every Sunday after church. Store it safely in case you need to restore data.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-3">Review in Meetings</h3>
+                    <p class="text-indigo-100 text-lg">Use the KPI dashboard during ward council to guide missionary discussions and priorities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Scripture -->
+    <div class="section gradient-bg">
+        <div class="text-center text-white max-w-4xl mx-auto">
+            <div class="text-7xl mb-6">📖</div>
+            <h2 class="text-4xl font-bold mb-8">Remember Why We Do This</h2>
+            <div class="bg-white/20 backdrop-blur-md rounded-2xl p-10 mb-8">
+                <p class="text-2xl italic leading-relaxed mb-4">"For behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul"</p>
+                <p class="text-lg text-indigo-200">— Doctrine & Covenants 4:4</p>
+            </div>
+            <p class="text-xl text-indigo-100 mb-8">This tracker is a tool to help you bring souls unto Christ. May it bless your ward's missionary efforts!</p>
+            <div class="text-sm text-indigo-200">Made with ❤️ for the Riverton 24th Ward</div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="fixed bottom-8 right-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </a>
+</body>
+</html>
