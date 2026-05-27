@@ -1,468 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus 5 Tracker - Complete Guide</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; scroll-behavior: smooth; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); }
-        .section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in-up { animation: fadeInUp 0.8s ease-out; }
-        .step-number { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); }
-        @media (min-width: 768px) { .step-number { width: 56px; height: 56px; font-size: 22px; } }
-        @media (min-width: 1024px) { .step-number { width: 60px; height: 60px; font-size: 24px; } }
-        .screenshot-box { border: 4px solid #667eea; border-radius: 20px; padding: 20px; background: white; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); }
-        .code-badge { display: inline-block; padding: 4px 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 14px; margin: 2px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Focus 5 Tracker — Complete Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-ring { 0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4)} 50%{box-shadow:0 0 0 12px rgba(99,102,241,0)} }
+.fade-up { animation: fadeUp .7s ease-out both; }
+.glass { background:rgba(255,255,255,.96); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.6); box-shadow:0 8px 32px rgba(0,0,0,.08); }
+.step-dot { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:900; flex-shrink:0; }
+.badge { display:inline-flex; align-items:center; padding:3px 10px; border-radius:7px; font-size:12px; font-weight:800; color:#fff; margin:2px; }
+.sim-btn { cursor:pointer; transition:all .15s; user-select:none; }
+.sim-btn:hover { filter:brightness(.93); transform:scale(.97); }
+.sim-btn:active { transform:scale(.94); }
+.tab-active { box-shadow:0 4px 16px rgba(0,0,0,.12); }
+/* Simulator scrollbars */
+.sim-scroll { scrollbar-width:thin; scrollbar-color:#d1d5db #f9fafb; }
+.sim-scroll::-webkit-scrollbar { width:4px; } 
+.sim-scroll::-webkit-scrollbar-thumb { background:#d1d5db; border-radius:4px; }
+/* Nav dot */
+.nav-dot { width:8px; height:8px; border-radius:50%; background:#c7d2fe; transition:.2s; }
+.nav-dot.active { background:#6366f1; width:20px; border-radius:4px; }
+@media print { .no-print { display:none !important; } }
+</style>
 </head>
-<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-    <!-- Hero Section -->
-    <div class="section gradient-bg">
-        <div class="text-center text-white max-w-5xl mx-auto fade-in-up">
-            <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl lg:text-7xl lg:text-8xl mb-4 md:mb-5 lg:mb-6">📋</div>
-            <h1 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl lg:text-7xl font-black mb-4 md:mb-5 lg:mb-6 leading-tight">Focus 5 Missionary Tracker</h1>
-            <p class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8 text-indigo-100 font-medium">The Complete User Guide</p>
-            <div class="bg-white/20 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8 max-w-3xl mx-auto">
-                <p class="text-base md:text-lg lg:text-xl italic leading-relaxed">"And if it so be that you should labor all your days in crying repentance unto this people, and bring, save it be one soul unto me, how great shall be your joy with him in the kingdom of my Father!"</p>
-                <p class="text-sm mt-3 text-indigo-200">— Doctrine & Covenants 18:15</p>
-            </div>
-            <a href="#overview" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-xl text-base md:text-lg lg:text-xl font-bold hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-2xl">Get Started →</a>
-        </div>
+<body class="bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 min-h-screen">
+
+<!-- ── STICKY NAV ─────────────────────────────────────── -->
+<nav class="no-print fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-indigo-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">📋</span>
+      <span class="font-black text-indigo-900 text-sm md:text-base">Focus 5 Guide</span>
+    </div>
+    <div class="flex items-center gap-1 no-print" id="navDots">
+      <a href="#hero" class="nav-dot active" title="Home"></a>
+      <a href="#overview" class="nav-dot" title="Overview"></a>
+      <a href="#tracker" class="nav-dot" title="Tracker"></a>
+      <a href="#plan" class="nav-dot" title="Plan Column"></a>
+      <a href="#thisweek" class="nav-dot" title="This Week"></a>
+      <a href="#actionboard" class="nav-dot" title="Action Board"></a>
+      <a href="#indicators" class="nav-dot" title="Indicators"></a>
+      <a href="#covenant" class="nav-dot" title="Covenant Path"></a>
+      <a href="#kpi" class="nav-dot" title="KPI Dashboard"></a>
+      <a href="#events" class="nav-dot" title="Ward Events"></a>
+      <a href="#prayer" class="nav-dot" title="Prayer List"></a>
+      <a href="#report" class="nav-dot" title="Ward Council Report"></a>
+      <a href="#tips" class="nav-dot" title="Best Practices"></a>
+    </div>
+    <a href="https://filipefa1998-sudo.github.io/focus5-tracker/" target="_blank" class="no-print bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-xl text-xs font-black shadow hover:shadow-lg transition-all">Open App →</a>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 pt-16 px-4">
+  <div class="text-center text-white max-w-4xl mx-auto fade-up">
+    <div class="text-8xl mb-6">📋</div>
+    <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Focus 5 Missionary Tracker</h1>
+    <p class="text-xl text-indigo-200 mb-3 font-semibold">Complete User Guide — Riverton 24th Tongan Ward</p>
+    <p class="text-sm text-indigo-300 mb-8">Updated with This Week, Action Board, Plan Column & more</p>
+    <div class="bg-white/15 rounded-2xl p-6 max-w-2xl mx-auto mb-8 border border-white/20">
+      <p class="text-lg italic leading-relaxed">"And if it so be that you should labor all your days in crying repentance unto this people, and bring, save it be one soul unto me, how great shall be your joy with him in the kingdom of my Father!"</p>
+      <p class="text-indigo-300 text-sm mt-3">— Doctrine &amp; Covenants 18:15</p>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="#overview" class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-black text-lg shadow-2xl hover:bg-indigo-50 transition-all">Start Guide ↓</a>
+      <a href="https://filipefa1998-sudo.github.io/focus5-tracker/" target="_blank" class="no-print bg-white/20 border border-white/40 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white/30 transition-all">Open App →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── OVERVIEW ───────────────────────────────────────── -->
+<section id="overview" class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-black text-center text-indigo-900 mb-4">What's Inside This App</h2>
+    <p class="text-center text-gray-500 mb-12 font-semibold">8 interconnected tools — all in one file, synced in real-time via Firebase</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="#tracker" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all group">
+        <div class="text-4xl mb-3">📅</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Monthly Tracker</div>
+        <div class="text-xs text-gray-500">Log activities per person per month</div>
+      </a>
+      <a href="#thisweek" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">📋</div>
+        <div class="font-black text-gray-900 text-sm mb-1">This Week</div>
+        <div class="text-xs text-gray-500">Who to contact and by when</div>
+      </a>
+      <a href="#actionboard" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">🗂️</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Action Board</div>
+        <div class="text-xs text-gray-500">Kanban war-room for ward council</div>
+      </a>
+      <a href="#kpi" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">📊</div>
+        <div class="font-black text-gray-900 text-sm mb-1">KPI Dashboard</div>
+        <div class="text-xs text-gray-500">Charts & analytics</div>
+      </a>
+      <a href="#events" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">🎉</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Ward Events</div>
+        <div class="text-xs text-gray-500">Calendar with invite-ready flags</div>
+      </a>
+      <a href="#prayer" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">🙏</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Prayer List</div>
+        <div class="text-xs text-gray-500">Shared team prayer list</div>
+      </a>
+      <a href="#covenant" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">📖</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Covenant Path</div>
+        <div class="text-xs text-gray-500">Post-baptism ordinance tracking</div>
+      </a>
+      <a href="#report" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
+        <div class="text-4xl mb-3">📋</div>
+        <div class="font-black text-gray-900 text-sm mb-1">Ward Council Report</div>
+        <div class="text-xs text-gray-500">Auto-generated printable report</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 1: TRACKER ─────────────────────────────── -->
+<section id="tracker" class="py-24 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">1</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">Monthly Tracker</h2>
+        <p class="text-gray-600 text-lg">The main table where you log activity for each person every month. Switch between <strong>Investigators</strong> and <strong>Returning Members</strong> using the top tabs.</p>
+      </div>
     </div>
 
-    <!-- Overview Section -->
-    <div id="overview" class="section px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl font-black gradient-text mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8 md:mb-10 lg:mb-12 text-center">What is Focus 5?</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 md:p-4 md:p-5 lg:p-6 lg:p-8">
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl mb-4">🎯</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-gray-900">Track Investigators</h3>
-                    <p class="text-gray-700">Monitor current investigators and their progress toward baptism. Track invitations extended and covenant path milestones.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl mb-4">💙</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-gray-900">Fellowship Less Active</h3>
-                    <p class="text-gray-700">Support less-active members and part-member families. Record fellowship activities and engagement efforts.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl mb-4">📅</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-gray-900">Ward Events Calendar</h3>
-                    <p class="text-gray-700">Share upcoming ward and stake events. Know exactly what activities to invite investigators to attend.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl mb-4">📊</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-gray-900">Live Analytics</h3>
-                    <p class="text-gray-700">Real-time KPI dashboard with charts and metrics. Auto-syncs across all devices instantly.</p>
-                </div>
-            </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4 text-lg">🔢 Quarterly vs Full Year View</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-3 items-start"><span class="text-xl">📅</span><div><strong>Quarterly</strong> — Shows 3 months at a time. Use ◀ Prev / Next ▶ to navigate quarters. Jump directly to Q1–Q4 with the pill buttons.</div></div>
+          <div class="flex gap-3 items-start"><span class="text-xl">📆</span><div><strong>Full Year</strong> — All 12 months side by side. Best for a complete annual overview.</div></div>
         </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4 text-lg">👤 Name Cell — What's In It</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-3 items-start"><span class="text-xl">😊</span><div><strong>Emoji/Avatar</strong> — Click to change. Pick any emoji to represent the person.</div></div>
+          <div class="flex gap-3 items-start"><span class="text-xl">✏️</span><div><strong>Name field</strong> — Type directly. Auto-saves with debounce.</div></div>
+          <div class="flex gap-3 items-start"><span class="text-xl">🎯</span><div><strong>Goal field</strong> — One-line spiritual goal for this person (e.g. "Baptism by June").</div></div>
+          <div class="flex gap-3 items-start"><span class="text-xl">🔥</span><div><strong>Streak badge</strong> — Shows consecutive months with activity logged. Builds accountability.</div></div>
+          <div class="flex gap-3 items-start"><span class="text-xl">🔴</span><div><strong>No activity badge</strong> — Appears when zero activities ever logged. Signals who needs attention.</div></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Step by Step Guide -->
-    <div class="section bg-gradient-to-br from-white to-indigo-50">
-        <div class="max-w-6xl mx-auto w-full">
-            <h2 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl font-black gradient-text mb-10 md:mb-14 lg:mb-16 text-center">Step-by-Step Guide</h2>
-            
-            <!-- Step 1: Calendar -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">1</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Add Ward Events to the Calendar</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <p class="text-lg text-gray-700 mb-4">Click <span class="font-bold text-green-600">"+ Add Event"</span> to share upcoming activities with your ward.</p>
-                            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-indigo-200 mb-4 md:mb-5 lg:mb-6">
-                                <h4 class="font-bold text-base md:text-lg lg:text-xl mb-4 text-indigo-900">📝 Event Information:</h4>
-                                <div class="space-y-3 text-gray-700">
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">📌</div>
-                                        <p><strong>Event Name</strong> — e.g., "Ward BBQ", "Youth Activity", "Service Project"</p>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">📅</div>
-                                        <p><strong>Date, Start Time & End Time</strong> — When the event happens</p>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">📍</div>
-                                        <p><strong>Location</strong> — Church building, park, member's home, etc.</p>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">🏘️⛪</div>
-                                        <p><strong>Event Level</strong> — Choose <strong>Ward Event</strong> or <strong>Stake Event</strong></p>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">🎉</div>
-                                        <p><strong>Event Type</strong> — Church Activity, Social, Sports, Service, Family, etc.</p>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <div class="text-base md:text-lg lg:text-xl">✨</div>
-                                        <p><strong>"Great for inviting investigators"</strong> — Check this box to highlight invitation opportunities!</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-green-200">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-4">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl">💡</div>
-                                    <p class="font-bold text-lg text-gray-900">Pro Tip:</p>
-                                </div>
-                                <p class="text-gray-700">Mark events as "Great for inviting investigators" so everyone knows which activities are perfect for bringing new people! These events get a special ✨ badge.</p>
-                            </div>
-                        </div>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <h4 class="font-bold text-base md:text-lg lg:text-xl mb-4 text-gray-900">📆 Two Calendar Views:</h4>
-                            <div class="grid md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                                <div class="bg-indigo-50 rounded-xl p-4 md:p-5 lg:p-6">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl mb-3">📋</div>
-                                    <h5 class="font-bold text-lg mb-2 text-indigo-900">List View</h5>
-                                    <p class="text-gray-700">See all upcoming events in chronological order with full details. Shows countdown badges for events coming soon!</p>
-                                </div>
-                                <div class="bg-purple-50 rounded-xl p-4 md:p-5 lg:p-6">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl mb-3">📅</div>
-                                    <h5 class="font-bold text-lg mb-2 text-purple-900">Calendar View</h5>
-                                    <p class="text-gray-700">Traditional monthly calendar grid. Ward events show in blue, stake events in purple. Click any event to edit.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Interactive Tracker Simulator -->
+    <div class="glass rounded-2xl overflow-hidden border-2 border-amber-200">
+      <div class="bg-gradient-to-r from-amber-600 to-amber-700 px-5 py-3">
+        <span class="text-white font-black">⚡ Try It — Tracker Simulator</span>
+        <span class="text-amber-200 text-xs ml-3">Click a month cell to log activity</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-amber-600 text-white">
+            <tr>
+              <th class="p-3 text-left font-black min-w-[160px]">Name</th>
+              <th class="p-3 text-center font-black min-w-[60px]">JAN</th>
+              <th class="p-3 text-center font-black min-w-[60px]">FEB</th>
+              <th class="p-3 text-center font-black min-w-[60px]">MAR</th>
+              <th class="p-3 text-left font-black min-w-[140px]">📋 Plan</th>
+            </tr>
+          </thead>
+          <tbody id="trackerBody">
+          </tbody>
+        </table>
+      </div>
+      <div class="p-4 bg-amber-50 border-t border-amber-200 text-xs text-amber-700 font-semibold">
+        💡 In the real app: clicking a month cell opens a full activity checklist with all 21 indicators
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Step 2 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">2</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Add an Investigator or Family</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <p class="text-lg text-gray-700 mb-4">Click the <span class="font-bold text-indigo-600">"+ Add Investigator"</span> or <span class="font-bold text-blue-600">"+ Add Family"</span> button at the top of each table.</p>
-                            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-indigo-200">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-4">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl">💡</div>
-                                    <p class="font-bold text-lg text-gray-900">Pro Tip:</p>
-                                </div>
-                                <p class="text-gray-700">Fill out the <strong>Name</strong> and <strong>Assigned To</strong> fields immediately. This helps everyone know who's responsible for each person.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">3</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Track Monthly Activities</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <p class="text-lg text-gray-700 mb-4 md:mb-5 lg:mb-6">Click any <span class="font-bold text-indigo-600">month cell</span> (Jan, Feb, Mar, etc.) to open the activity modal and select what happened that month.</p>
-                            <div class="grid md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                                <div>
-                                    <h4 class="font-bold text-base md:text-lg lg:text-xl mb-3 text-indigo-900">🎯 For Investigators:</h4>
-                                    <div class="space-y-2">
-                                        <div><span class="code-badge">RB</span> Read Book of Mormon</div>
-                                        <div><span class="code-badge">AC</span> Attend Church</div>
-                                        <div><span class="code-badge">AA</span> Attend Activity</div>
-                                        <div><span class="code-badge">FHE</span> Attend FHE</div>
-                                        <div><span class="code-badge">TM</span> Taught by Missionaries</div>
-                                        <div><span class="code-badge">PB</span> Pray about BOM</div>
-                                        <div><span class="code-badge">BD</span> Baptismal Date Set</div>
-                                        <div><span class="code-badge">BC</span> Baptism Completed ✨</div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-base md:text-lg lg:text-xl mb-3 text-blue-900">💙 For Less Active:</h4>
-                                    <div class="space-y-2">
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">SRV</span> Service</div>
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">AI</span> Activity Invited</div>
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">AAT</span> Activity Attended</div>
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">VIS</span> Visit</div>
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">IFH</span> Invited Family History</div>
-                                        <div><span class="code-badge bg-gradient-to-r from-blue-500 to-cyan-500">TXT</span> Text/Call</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">4</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Unlock the Covenant Path</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <p class="text-lg text-gray-700 mb-4">When you mark <span class="code-badge">BC</span> (Baptism Completed), a special <span class="font-bold text-green-600">Covenant Path</span> section appears below that investigator!</p>
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-green-200">
-                                <h4 class="font-bold text-base md:text-lg lg:text-xl mb-4 text-green-900">📖 Track Post-Baptism Progress:</h4>
-                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">✋</div>
-                                        <div class="text-sm font-semibold">Confirmation</div>
-                                    </div>
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">🕊️</div>
-                                        <div class="text-sm font-semibold">Holy Ghost Gift</div>
-                                    </div>
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">🍞</div>
-                                        <div class="text-sm font-semibold">Sacrament</div>
-                                    </div>
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">👔</div>
-                                        <div class="text-sm font-semibold">Priesthood</div>
-                                    </div>
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">🏛️</div>
-                                        <div class="text-sm font-semibold">Temple</div>
-                                    </div>
-                                    <div class="bg-white/60 rounded-lg p-3 text-center">
-                                        <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl mb-1">📞</div>
-                                        <div class="text-sm font-semibold">Calling</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">5</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">View KPI Analytics</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <p class="text-lg text-gray-700 mb-4 md:mb-5 lg:mb-6">Switch between different time views to analyze your ward's missionary efforts:</p>
-                            <div class="grid md:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-4 md:mb-5 lg:mb-6">
-                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-4 md:p-5 lg:p-6 text-center">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl mb-2">📅</div>
-                                    <div class="font-bold text-lg">This Month</div>
-                                    <div class="text-sm opacity-90 mt-1">Current month only</div>
-                                </div>
-                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-4 md:p-5 lg:p-6 text-center">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl mb-2">📊</div>
-                                    <div class="font-bold text-lg">Last 3 Months</div>
-                                    <div class="text-sm opacity-90 mt-1">Quarterly view</div>
-                                </div>
-                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-4 md:p-5 lg:p-6 text-center">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl mb-2">📈</div>
-                                    <div class="font-bold text-lg">Year to Date</div>
-                                    <div class="text-sm opacity-90 mt-1">Jan through current</div>
-                                </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-orange-200 mb-4 md:mb-5 lg:mb-6">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-3">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl">📊</div>
-                                    <p class="font-bold text-lg text-gray-900">What You'll See:</p>
-                                </div>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li><strong>👥 Total People:</strong> All investigators + less-active families</li>
-                                    <li><strong>⭐ Active Focus 5:</strong> People with activities in selected timeframe</li>
-                                    <li><strong>📈 Total Activities:</strong> Sum of all invitations and fellowship</li>
-                                    <li><strong>🎯 Engagement Rate:</strong> % of people actively engaged</li>
-                                </ul>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-blue-200">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-3">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl">📈</div>
-                                    <p class="font-bold text-lg text-gray-900">Visual Analytics with Percentages:</p>
-                                </div>
-                                <p class="text-gray-700">The pie charts now show <strong>percentages</strong> when you hover over them! For example: "AC: 12 (30.8%)" means 12 invitations to attend church, representing 30.8% of all invitations.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">6</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Auto-Save & Live Sync</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border-2 border-green-200 mb-4 md:mb-5 lg:mb-6">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-4">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl">🔄</div>
-                                    <div>
-                                        <h4 class="font-bold text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-900">Everything Saves Automatically!</h4>
-                                        <p class="text-green-700 text-lg">No need to click "Save" — changes sync instantly</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="space-y-4 text-gray-700 text-lg">
-                                <div class="flex items-start gap-3">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">✅</div>
-                                    <p><strong>Multiple people can use it at once</strong> — Ward mission leader, missionaries, bishopric, etc.</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">✅</div>
-                                    <p><strong>Changes appear instantly</strong> — If someone adds data, you'll see it immediately</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">✅</div>
-                                    <p><strong>Works on all devices</strong> — Phone, tablet, laptop, desktop — all stay in sync</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">✅</div>
-                                    <p><strong>Watch the indicator</strong> — Bottom right shows "Syncing..." → "✓ Saved"</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">✅</div>
-                                    <p><strong>Calendar events sync too</strong> — Everyone sees the same events in real-time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 7 -->
-            <div class="mb-12 md:mb-16 lg:mb-20 fade-in-up">
-                <div class="flex items-start gap-2 md:gap-3 lg:gap-4 md:p-5 lg:p-6">
-                    <div class="step-number flex-shrink-0">7</div>
-                    <div class="flex-1">
-                        <h3 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl font-bold mb-4 text-gray-900">Export & Backup</h3>
-                        <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 mb-4 md:mb-5 lg:mb-6">
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 md:p-5 lg:p-6 border-2 border-blue-200 mb-4 md:mb-5 lg:mb-6">
-                                <div class="flex items-center gap-2 md:gap-3 lg:gap-4 mb-3">
-                                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl">📥</div>
-                                    <p class="font-bold text-base md:text-lg lg:text-xl text-gray-900">Export Your Data Weekly</p>
-                                </div>
-                                <p class="text-gray-700 text-lg">Click the <strong>"📥 Export"</strong> button in the header to download a JSON backup file that includes all investigators, less-active families, AND calendar events.</p>
-                            </div>
-                            <div class="space-y-3 text-gray-700">
-                                <div class="flex items-start gap-3">
-                                    <div class="text-base md:text-lg lg:text-xl">💾</div>
-                                    <p><strong>Keep backups</strong> — Store weekly exports in Google Drive or OneDrive</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-base md:text-lg lg:text-xl">📧</div>
-                                    <p><strong>Share with leadership</strong> — Email exports to bishopric for records</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="text-base md:text-lg lg:text-xl">🖨️</div>
-                                    <p><strong>Print for meetings</strong> — Use "🖨️ Print" button for ward council</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- ── SECTION 2: PLAN COLUMN ─────────────────────────── -->
+<section id="plan" class="py-24 px-4 bg-gradient-to-br from-rose-50 to-pink-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-rose-500 to-red-600 text-white">2</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 Plan Column</h2>
+        <p class="text-gray-600 text-lg">Every person in the tracker has a <strong>Plan column</strong> — the four fields that turn the tracker from a scoreboard into a working tool. This is where you set ownership and next steps.</p>
+      </div>
     </div>
 
-    <!-- Common Questions -->
-    <div class="section px-4">
-        <div class="max-w-6xl mx-auto w-full">
-            <h2 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl font-black gradient-text mb-10 md:mb-14 lg:mb-16 text-center">Common Questions</h2>
-            <div class="space-y-6">
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ Can multiple people use this at the same time?</h3>
-                    <p class="text-gray-700 text-lg">Yes! Everyone who has the link can use it simultaneously. Changes sync in real-time across all devices.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ How do I edit or delete a calendar event?</h3>
-                    <p class="text-gray-700 text-lg">Simply click on any event in either the list view or calendar view. This opens the edit modal where you can update details or delete the event.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ What's the difference between Ward and Stake events?</h3>
-                    <p class="text-gray-700 text-lg">Ward events (🏘️) are for your ward only, shown in blue. Stake events (⛪) involve multiple wards in your stake, shown in purple. This helps distinguish local vs. stake-wide activities.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ What if I accidentally delete someone?</h3>
-                    <p class="text-gray-700 text-lg">Use your weekly backup! The Export feature saves all your data. You can also contact your ward's tech admin if you exported recently.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ How do I share this with my ward?</h3>
-                    <p class="text-gray-700 text-lg">Simply share the URL link! Anyone with the link can view and edit. Consider sharing it in your ward's group chat or email.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ Does this work on mobile?</h3>
-                    <p class="text-gray-700 text-lg">Yes! The tracker is fully responsive and works great on phones and tablets. Perfect for missionaries on the go.</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ Can I see percentages in the charts?</h3>
-                    <p class="text-gray-700 text-lg">Yes! Hover over any slice in the pie charts to see both the count and percentage. For example: "AC: 12 (30.8%)".</p>
-                </div>
-                <div class="glass-card rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 hover-lift">
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3 text-indigo-900">❓ Can I customize the activity codes?</h3>
-                    <p class="text-gray-700 text-lg">The codes are standardized for consistency across wards. If you need custom tracking, add details in the "Notes" column for each person.</p>
-                </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="space-y-4">
+        <div class="glass rounded-2xl p-5 border-l-4 border-rose-500">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">👤</span>
+            <div>
+              <div class="font-black text-gray-900 mb-1">Assign To (single dropdown)</div>
+              <div class="text-sm text-gray-600 mb-2">One dropdown handles both the <em>leader</em> (shown in This Week and Action Board) and the <em>organization</em> (used in KPI reports). No duplicate fields.</div>
+              <div class="flex flex-wrap gap-1">
+                <span class="badge bg-amber-500">⚡ EQ President</span>
+                <span class="badge bg-pink-500">🌸 RS President</span>
+                <span class="badge bg-indigo-500">📖 Ward Missionaries</span>
+                <span class="badge bg-slate-500">👔 Full-time Missionaries</span>
+                <span class="badge bg-purple-500">🏛️ Bishop</span>
+                <span class="badge bg-teal-500">🎯 YM President</span>
+                <span class="badge bg-cyan-500">⭐ YW President</span>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-rose-400">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">📅</span>
+            <div>
+              <div class="font-black text-gray-900 mb-1">Next Contact Date</div>
+              <div class="text-sm text-gray-600">Date picker. Sets when this person should next be contacted. Drives the <strong>This Week</strong> tab — overdue dates turn red, this week turns yellow.</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-rose-300">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">📝</span>
+            <div>
+              <div class="font-black text-gray-900 mb-1">Next Action</div>
+              <div class="text-sm text-gray-600">Free text field. e.g. "Invite to Thursday BBQ", "Follow up on lesson 2", "Check in about baptism date"</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-rose-200">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">✅</span>
+            <div>
+              <div class="font-black text-gray-900 mb-1">Mark Contacted</div>
+              <div class="text-sm text-gray-600">One-click button that stamps today's date as the last contact. When a date exists, the button turns green and shows "Last: MM-DD". Used by Action Board to calculate staleness.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan column sim -->
+      <div class="glass rounded-2xl overflow-hidden border-2 border-rose-200">
+        <div class="bg-gradient-to-r from-rose-500 to-red-500 px-4 py-3">
+          <span class="text-white font-black text-sm">Try It — Plan Column</span>
+        </div>
+        <div class="p-4 space-y-3" id="planSim">
+          <div>
+            <label class="block text-xs font-black text-gray-600 mb-1">👤 Assign To</label>
+            <select id="simAssign" class="w-full px-3 py-2 border border-rose-200 rounded-lg text-sm font-semibold focus:outline-none focus:border-rose-400" onchange="updatePlanPreview()">
+              <option value="">Select...</option>
+              <option value="EQ President">⚡ EQ President</option>
+              <option value="RS President">🌸 RS President</option>
+              <option value="Ward Missionaries">📖 Ward Missionaries</option>
+              <option value="Full-time Missionaries">👔 Full-time Missionaries</option>
+              <option value="Bishop">🏛️ Bishop</option>
+              <option value="YM President">🎯 YM President</option>
+              <option value="YW President">⭐ YW President</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-black text-gray-600 mb-1">📅 Next Contact Date</label>
+            <input type="date" id="simDate" class="w-full px-3 py-2 border border-rose-200 rounded-lg text-sm focus:outline-none focus:border-rose-400" onchange="updatePlanPreview()" />
+          </div>
+          <div>
+            <label class="block text-xs font-black text-gray-600 mb-1">📝 Next Action</label>
+            <input type="text" id="simAction" placeholder="e.g. Invite to Thursday BBQ" class="w-full px-3 py-2 border border-rose-200 rounded-lg text-sm focus:outline-none focus:border-rose-400" oninput="updatePlanPreview()" />
+          </div>
+          <button id="simMarkContacted" onclick="simMarkContacted()" class="w-full py-2 text-sm font-black rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200 transition-all sim-btn">📞 Mark Contacted</button>
+          <div id="planPreview" class="bg-gray-50 rounded-xl p-3 border border-gray-200 text-xs text-gray-500 italic">Fill in the fields above to see the This Week preview...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3: THIS WEEK ───────────────────────────── -->
+<section id="thisweek" class="py-24 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-rose-600 to-red-700 text-white">3</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 This Week Tab</h2>
+        <p class="text-gray-600 text-lg">Your <strong>Sunday working document.</strong> Opens to every person sorted by urgency — overdue contacts at the top in red, then this week in yellow, upcoming in green, and no date set in gray. The tab shows a badge count of how many need action.</p>
+      </div>
     </div>
 
-    <!-- Best Practices -->
-    <div class="section bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl font-black mb-10 md:mb-14 lg:mb-16 text-center">Best Practices</h2>
-            <div class="grid md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 md:p-4 md:p-5 lg:p-6 lg:p-8">
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">📅</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Keep Calendar Updated</h3>
-                    <p class="text-indigo-100 text-lg">Add events as soon as they're planned. Mark events that are "Great for inviting" so everyone knows the best opportunities!</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">🎯</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Update Weekly</h3>
-                    <p class="text-indigo-100 text-lg">Make it a habit to update the tracker after Sunday services or weekly coordination meetings.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">👥</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Assign Clearly</h3>
-                    <p class="text-indigo-100 text-lg">Always fill out the "Assigned To" field so everyone knows who's responsible for follow-up.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">💾</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Export Regularly</h3>
-                    <p class="text-indigo-100 text-lg">Download a backup every Sunday after church. Store it safely in case you need to restore data.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">📊</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Review in Meetings</h3>
-                    <p class="text-indigo-100 text-lg">Use the KPI dashboard during ward council to guide missionary discussions and priorities.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 border border-white/20">
-                    <div class="text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl mb-4">✨</div>
-                    <h3 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">Coordinate Invitations</h3>
-                    <p class="text-indigo-100 text-lg">Check the calendar before visits to know what events are coming up that you can invite people to attend.</p>
-                </div>
-            </div>
-        </div>
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-5">
+        <div class="font-black text-red-700 mb-2">🔴 Overdue</div>
+        <div class="text-sm text-red-600">Next Contact Date has passed. Contact is late. These always show first.</div>
+      </div>
+      <div class="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-5">
+        <div class="font-black text-yellow-700 mb-2">🟡 Due This Week</div>
+        <div class="text-sm text-yellow-600">Contact date falls within the next 7 days. Act before it becomes overdue.</div>
+      </div>
+      <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-5">
+        <div class="font-black text-green-700 mb-2">🟢 Upcoming</div>
+        <div class="text-sm text-green-600">Contact date is more than 7 days out. On your radar but not urgent yet.</div>
+      </div>
     </div>
 
-    <!-- Final Scripture -->
-    <div class="section gradient-bg">
-        <div class="text-center text-white max-w-4xl mx-auto">
-            <div class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl lg:text-5xl lg:text-6xl lg:text-7xl mb-4 md:mb-5 lg:mb-6">📖</div>
-            <h2 class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl md:text-base md:text-lg lg:text-xl md:text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl lg:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8">Remember Why We Do This</h2>
-            <div class="bg-white/20 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-5 lg:p-6 md:p-4 md:p-4 md:p-5 lg:p-6 lg:p-8 lg:p-10 mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8">
-                <p class="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl italic leading-relaxed mb-4">"For behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul"</p>
-                <p class="text-lg text-indigo-200">— Doctrine & Covenants 4:4</p>
-            </div>
-            <p class="text-base md:text-lg lg:text-xl text-indigo-100 mb-4 md:mb-5 lg:mb-6 md:mb-7 lg:mb-8">This tracker is a tool to help you bring souls unto Christ. May it bless your ward's missionary efforts!</p>
-            <div class="text-sm text-indigo-200">Made with ❤️ for the Riverton 24th Ward</div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">🔍 Tab Filter</h3>
+        <p class="text-sm text-gray-600 mb-4">Use the filter buttons in the header to narrow the view:</p>
+        <div class="flex gap-2 bg-gray-100 rounded-xl p-1 mb-4">
+          <button class="flex-1 py-2 rounded-lg text-xs font-black bg-white text-rose-700 shadow">All</button>
+          <button class="flex-1 py-2 rounded-lg text-xs font-black text-gray-500">👤 Invest.</button>
+          <button class="flex-1 py-2 rounded-lg text-xs font-black text-gray-500">💙 Return.</button>
         </div>
+        <p class="text-xs text-gray-500">Ward missionaries can filter to <strong>Investigators only</strong>. EQ President can filter to <strong>Returning only</strong>. Ward Mission Leader can see <strong>All</strong>.</p>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">⚡ Quick Actions on Each Card</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-3 items-start"><span>✅</span><div><strong>Mark Contacted</strong> — Stamps today's date. Clears the urgency. Card moves to Upcoming or falls off the due list.</div></div>
+          <div class="flex gap-3 items-start"><span>📅</span><div><strong>Inline date picker</strong> — Change the next contact date right on the card without going back to the tracker table.</div></div>
+          <div class="flex gap-3 items-start"><span>📱</span><div><strong>Send Summary</strong> — Generates a pre-written WhatsApp/iMessage message listing every overdue and due-this-week contact with their assigned leader and next action. One tap to share.</div></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <a href="#" class="fixed bottom-8 right-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    </a>
+    <!-- This Week simulator -->
+    <div class="glass rounded-2xl overflow-hidden border-2 border-rose-200">
+      <div class="bg-gradient-to-r from-rose-600 to-red-600 px-5 py-4 flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">📋</span>
+          <div>
+            <div class="text-white font-black text-lg">This Week's Focus</div>
+            <div class="text-rose-200 text-xs">Interactive simulator</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex bg-white/20 rounded-xl p-1 gap-1">
+            <button onclick="setWeekFilter('all')" id="wf-all" class="px-3 py-1.5 rounded-lg text-xs font-black bg-white text-rose-700 shadow">All</button>
+            <button onclick="setWeekFilter('inv')" id="wf-inv" class="px-3 py-1.5 rounded-lg text-xs font-black text-white">👤 Invest.</button>
+            <button onclick="setWeekFilter('ret')" id="wf-ret" class="px-3 py-1.5 rounded-lg text-xs font-black text-white">💙 Return.</button>
+          </div>
+          <button onclick="simSendSummary()" class="flex items-center gap-2 px-4 py-2 bg-white text-rose-700 rounded-xl font-black text-xs shadow sim-btn">📱 Send Summary</button>
+        </div>
+      </div>
+      <div class="p-4 space-y-3" id="thisWeekSim"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: ACTION BOARD ────────────────────────── -->
+<section id="actionboard" class="py-24 px-4 bg-gradient-to-br from-violet-50 to-purple-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-violet-600 to-purple-700 text-white">4</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">🗂️ Action Board</h2>
+        <p class="text-gray-600 text-lg">The <strong>Sunday war-room view</strong> for ward council. Every person is automatically sorted into one of four columns based on their current status. No manual sorting needed — the app decides.</p>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6 mb-8">
+      <h3 class="font-black text-gray-900 mb-5 text-lg">How Cards Are Auto-Sorted</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-xl p-4 border-l-4 border-slate-400">
+          <div class="font-black text-slate-700 mb-1">🌱 New</div>
+          <div class="text-sm text-gray-600">Zero activities ever logged. Has never been contacted. Needs a first step.</div>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-4 border-l-4 border-blue-400">
+          <div class="font-black text-blue-700 mb-1">🔄 In Progress</div>
+          <div class="text-sm text-gray-600">Has logged activities and was contacted within the last 30 days. Actively engaged.</div>
+        </div>
+        <div class="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-400">
+          <div class="font-black text-orange-700 mb-1">⚡ Needs Attention</div>
+          <div class="text-sm text-gray-600">Has history, but no contact logged in 30+ days. Falling through the cracks — act now. <em>Smart fallback: if no Mark Contacted date exists, uses last month with logged activity as a proxy.</em></div>
+        </div>
+        <div class="bg-emerald-50 rounded-xl p-4 border-l-4 border-emerald-400">
+          <div class="font-black text-emerald-700 mb-1">🏆 Milestone Hit</div>
+          <div class="text-sm text-gray-600">Baptism date set (BD) or baptism completed (B/C indicator logged). Moved to Covenant Path next.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-6 mb-8">
+      <h3 class="font-black text-gray-900 mb-4">What's On Each Card</h3>
+      <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+        <div class="flex gap-2 items-start"><span>🔥</span><div><strong>Streak badge</strong> — consecutive months with activity. e.g. "🔥 3mo"</div></div>
+        <div class="flex gap-2 items-start"><span>👤</span><div><strong>Assigned leader</strong> or red "Unassigned" badge if empty</div></div>
+        <div class="flex gap-2 items-start"><span>📝</span><div><strong>Next action text</strong> — pulled from Plan column</div></div>
+        <div class="flex gap-2 items-start"><span>🏅</span><div><strong>Top indicator</strong> — most frequently logged activity type</div></div>
+        <div class="flex gap-2 items-start"><span>✓</span><div><strong>This month count</strong> — activities logged this month</div></div>
+        <div class="flex gap-2 items-start"><span>🕐</span><div><strong>Days since contact</strong> — e.g. "12d ago"</div></div>
+      </div>
+    </div>
+
+    <!-- Action Board Sim -->
+    <div class="glass rounded-2xl overflow-hidden border-2 border-violet-200">
+      <div class="bg-gradient-to-r from-violet-700 to-purple-700 px-5 py-4">
+        <span class="text-white font-black text-lg">🗂️ Action Board — Interactive</span>
+        <span class="text-violet-200 text-sm ml-3">Cards auto-sort based on activity and contact history</span>
+      </div>
+      <div class="p-4">
+        <div class="grid grid-cols-2 xl:grid-cols-4 gap-3" id="actionBoardSim"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: INDICATORS ──────────────────────────── -->
+<section id="indicators" class="py-24 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">5</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">✨ Activity Indicators</h2>
+        <p class="text-gray-600 text-lg">21 standardized activity codes you select when logging a month. Click any cell in the tracker to open the checklist. You can select multiple in one month.</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-amber-700 mb-4">⛪ Gospel Activities</h3>
+        <div class="grid grid-cols-2 gap-2" id="indList1"></div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-blue-700 mb-4">🤝 Fellowship & Contact</h3>
+        <div class="grid grid-cols-2 gap-2" id="indList2"></div>
+      </div>
+    </div>
+    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5">
+      <p class="font-black text-amber-800 mb-2">⭐ Special Indicators</p>
+      <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+        <div class="flex gap-2"><span class="badge bg-gradient-to-r from-green-500 to-emerald-600">B</span><div><strong>Baptized</strong> — When checked, automatically moves the person to the Covenant Path section.</div></div>
+        <div class="flex gap-2"><span class="badge bg-gradient-to-r from-purple-500 to-indigo-600">ACTIVE</span><div><strong>Active</strong> — When checked for a returning member, also triggers Covenant Path move.</div></div>
+        <div class="flex gap-2"><span class="badge bg-gradient-to-r from-orange-500 to-red-500">BD</span><div><strong>Baptism Date Set</strong> — Triggers Milestone column on Action Board.</div></div>
+        <div class="flex gap-2"><span class="badge bg-gradient-to-r from-teal-500 to-cyan-600">IAC</span><div><strong>Invite Accepted &amp; Came</strong> — Person attended a ward event. Strong engagement signal.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: COVENANT PATH ───────────────────────── -->
+<section id="covenant" class="py-24 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-purple-600 to-indigo-700 text-white">6</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">📖 Covenant Path</h2>
+        <p class="text-gray-600 text-lg">Automatically appears below the tracker when someone is baptized. Tracks their post-baptism ordinance milestones and Self-Reliance courses.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-8">
+      <div class="glass rounded-2xl p-5">
+        <div class="font-black text-blue-700 mb-3 text-lg">👔 Male Path</div>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center text-blue-700 text-xs font-black">1</div><span>✋ Aaronic Priesthood</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center text-blue-700 text-xs font-black">2</div><span>🏛️ Temple Baptisms</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center text-blue-700 text-xs font-black">3</div><span>📜 Patriarchal Blessing</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center text-blue-700 text-xs font-black">4</div><span>👔 Melchizedek Priesthood</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center text-blue-700 text-xs font-black">5</div><span>⭐ Temple Endowment</span></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="font-black text-pink-700 mb-3 text-lg">🌸 Female Path</div>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-pink-100 border-2 border-pink-400 flex items-center justify-center text-pink-700 text-xs font-black">1</div><span>🏛️ Temple Baptisms</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-pink-100 border-2 border-pink-400 flex items-center justify-center text-pink-700 text-xs font-black">2</div><span>📜 Patriarchal Blessing</span></div>
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-pink-100 border-2 border-pink-400 flex items-center justify-center text-pink-700 text-xs font-black">3</div><span>⭐ Temple Endowment</span></div>
+        </div>
+        <div class="font-black text-purple-700 mb-3 text-lg mt-5">🕊️ OAY Path</div>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center gap-2"><div class="w-5 h-5 rounded-full bg-purple-100 border-2 border-purple-400 flex items-center justify-center text-purple-700 text-xs font-black">1</div><span>🏛️ Temple Baptisms (only)</span></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5">
+        <div class="font-black text-emerald-700 mb-3 text-lg">💼 Self-Reliance Courses</div>
+        <div class="space-y-2 text-sm text-gray-700">
+          <div class="flex gap-2 items-start"><span>🧠</span><div>Emotional Resilience</div></div>
+          <div class="flex gap-2 items-start"><span>💰</span><div>Personal Finances</div></div>
+          <div class="flex gap-2 items-start"><span>🏪</span><div>Start &amp; Grow a Business</div></div>
+          <div class="flex gap-2 items-start"><span>🎓</span><div>Education for Better Work</div></div>
+          <div class="flex gap-2 items-start"><span>💼</span><div>Find a Better Job</div></div>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 mt-3 text-xs text-emerald-700 font-semibold">Completing Temple Endowment marks the person 🏆 Complete with a trophy badge.</div>
+      </div>
+    </div>
+
+    <!-- Covenant Path simulator -->
+    <div class="glass rounded-2xl overflow-hidden border-2 border-purple-200">
+      <div class="bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-900 px-5 py-4">
+        <span class="text-white font-black text-lg">📖 Covenant Path Simulator</span>
+        <span class="text-purple-300 text-sm ml-3">Check ordinances to track progress</span>
+      </div>
+      <div class="p-5" id="covenantSim"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 7: KPI DASHBOARD ───────────────────────── -->
+<section id="kpi" class="py-24 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">7</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">📊 KPI Dashboard</h2>
+        <p class="text-gray-600 text-lg">Analytics and charts automatically calculated from your logged data. Switch between Investigators and Returning Members tabs to see separate dashboards.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">📈 Stat Cards (top row)</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-amber-50 rounded-xl p-3 border border-amber-200 text-center">
+            <div class="text-2xl font-black text-amber-700">24</div>
+            <div class="text-xs font-bold text-amber-600">Total Activities</div>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3 border border-blue-200 text-center">
+            <div class="text-2xl font-black text-blue-700">4.8</div>
+            <div class="text-xs font-bold text-blue-600">Avg / Person</div>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3 border border-green-200 text-center">
+            <div class="text-2xl font-black text-green-700">3</div>
+            <div class="text-xs font-bold text-green-600">Active This Month</div>
+          </div>
+          <div class="bg-pink-50 rounded-xl p-3 border border-pink-200 text-center">
+            <div class="text-2xl font-black text-pink-700">2</div>
+            <div class="text-xs font-bold text-pink-600">Baptized / Active</div>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">📉 Chart Types</h3>
+        <div class="space-y-2 text-sm text-gray-700">
+          <div class="flex gap-2"><span>📅</span><div><strong>Monthly Activity Trend</strong> — line chart showing activity totals per month across the year</div></div>
+          <div class="flex gap-2"><span>🏅</span><div><strong>Activities per Person</strong> — bar chart comparing individuals</div></div>
+          <div class="flex gap-2"><span>🎯</span><div><strong>Top Indicators Donut</strong> — which activity types are most common</div></div>
+          <div class="flex gap-2"><span>🕸️</span><div><strong>Bi-Monthly Radar</strong> — spread of activity across the year per person</div></div>
+          <div class="flex gap-2"><span>🏆</span><div><strong>Individual Progress Bars</strong> — year-to-date completion % per person</div></div>
+          <div class="flex gap-2"><span>📋</span><div><strong>Indicator Breakdown</strong> — all logged activity types ranked by frequency</div></div>
+          <div class="flex gap-2"><span>📖</span><div><strong>Covenant Path Dashboard</strong> — appears if baptized members exist: member type donut + self-reliance bar chart</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-5">
+      <p class="font-black text-indigo-800 mb-3">💡 How to Read the Dashboard in Ward Council</p>
+      <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+        <div class="flex gap-2 items-start"><span>1️⃣</span><div>Check <strong>"Active This Month"</strong> — how many are actually being worked this month vs. total count</div></div>
+        <div class="flex gap-2 items-start"><span>2️⃣</span><div>Look at <strong>"Top Indicators"</strong> — is the ward doing more TXT (texting) than AC (attending church)? Adjust focus.</div></div>
+        <div class="flex gap-2 items-start"><span>3️⃣</span><div>Check <strong>"Individual Progress Bars"</strong> — who has zero activities this year? That's your Needs Attention list.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 8: WARD EVENTS ─────────────────────────── -->
+<section id="events" class="py-24 px-4 bg-gradient-to-br from-green-50 to-emerald-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-green-600 to-emerald-700 text-white">8</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">🎉 Ward Events Calendar</h2>
+        <p class="text-gray-600 text-lg">Shared calendar synced in real-time. Events are visible to everyone with the app link. Use it to plan which ward activities to invite investigators to.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">📅 Adding an Event</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-2 items-start"><span>📌</span><div><strong>Event Name</strong> — e.g., "Ward BBQ", "Youth Talent Show", "Baptism Service"</div></div>
+          <div class="flex gap-2 items-start"><span>📅</span><div><strong>Date</strong> — Uses safe local date parsing (no off-by-one timezone bug)</div></div>
+          <div class="flex gap-2 items-start"><span>⏰</span><div><strong>Time</strong> — optional start time</div></div>
+          <div class="flex gap-2 items-start"><span>📍</span><div><strong>Location</strong> — building, address, etc.</div></div>
+          <div class="flex gap-2 items-start"><span>🏷️</span><div><strong>Event Type</strong> — Church Activity, Social, Sports, Service, Family, Scripture Study, Spiritual, Youth Activity</div></div>
+          <div class="flex gap-2 items-start"><span>✨</span><div><strong>"Great for inviting investigators"</strong> checkbox — marks the event with a ✨ badge everywhere it appears</div></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">👁️ Two Views</h3>
+        <div class="space-y-4">
+          <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+            <div class="font-black text-green-800 mb-1">📅 Calendar View</div>
+            <div class="text-sm text-gray-600">Monthly grid. Click any day to add an event on that date. Events shown as color-coded pills by type. Click any event pill to edit.</div>
+          </div>
+          <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
+            <div class="font-black text-emerald-800 mb-1">📋 List View</div>
+            <div class="text-sm text-gray-600">Chronological list split into Upcoming (sorted soonest first, countdown badge: "3 days") and Past (last 8 shown). Click any event to edit or delete.</div>
+          </div>
+        </div>
+        <div class="bg-teal-50 rounded-xl p-3 mt-3 border border-teal-200 text-xs text-teal-700 font-semibold">
+          📱 Share Button — Each event has a Share button that uses the device's native share sheet (WhatsApp, iMessage, etc.) to send event details. Falls back to clipboard copy.
+        </div>
+      </div>
+    </div>
+
+    <!-- Event sim -->
+    <div class="glass rounded-2xl overflow-hidden border-2 border-green-200">
+      <div class="bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-3 flex items-center justify-between">
+        <span class="text-white font-black">🗓️ Ward Events — Upcoming Preview</span>
+        <button onclick="addSimEvent()" class="bg-white text-green-700 px-4 py-2 rounded-xl font-black text-xs shadow sim-btn">➕ Add Event</button>
+      </div>
+      <div class="p-4 space-y-3" id="eventSim"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 9: PRAYER LIST ─────────────────────────── -->
+<section id="prayer" class="py-24 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-indigo-600 to-purple-700 text-white">9</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">🙏 Prayer List</h2>
+        <p class="text-gray-600 text-lg">A shared team prayer list synced in real-time. Add names manually or use Quick Add to pull names directly from the tracker. Notes field for each person (e.g. "baptism date coming up", "answered prayer: attended church Sunday").</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">How to Use It</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-2 items-start"><span>➕</span><div>Type a name in the input field and press Enter or tap "Add 🙏" to add them</div></div>
+          <div class="flex gap-2 items-start"><span>⚡</span><div><strong>Quick Add from Tracker</strong> — Shows all named investigators/returning members not already on the list. One tap to add.</div></div>
+          <div class="flex gap-2 items-start"><span>📝</span><div>Each person has a notes field for updates, answered prayers, or reminders</div></div>
+          <div class="flex gap-2 items-start"><span>🗑️</span><div>Remove someone once they're baptized or no longer need the specific prayer focus</div></div>
+          <div class="flex gap-2 items-start"><span>🔄</span><div><strong>Shared</strong> — everyone with the app link sees and can update the same list in real-time</div></div>
+        </div>
+      </div>
+      <!-- Prayer sim -->
+      <div class="glass rounded-2xl overflow-hidden border-2 border-indigo-200">
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3">
+          <span class="text-white font-black">🙏 Prayer List Simulator</span>
+        </div>
+        <div class="p-4">
+          <div class="flex gap-2 mb-3">
+            <input id="prayerInput" type="text" placeholder="Enter a name..." class="flex-1 px-3 py-2 border-2 border-indigo-200 rounded-xl text-sm font-semibold focus:outline-none focus:border-indigo-400" onkeydown="if(event.key==='Enter'){addSimPrayer();}" />
+            <button onclick="addSimPrayer()" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-black text-sm shadow sim-btn">Add 🙏</button>
+          </div>
+          <div class="mb-2">
+            <div class="text-xs font-black text-indigo-700 mb-2">⚡ Quick Add from Tracker</div>
+            <div class="flex flex-wrap gap-2" id="quickAddBtns"></div>
+          </div>
+          <div id="prayerList" class="space-y-2 mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 10: WARD COUNCIL REPORT ────────────────── -->
+<section id="report" class="py-24 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-start gap-5 mb-10">
+      <div class="step-dot bg-gradient-to-br from-amber-600 to-orange-700 text-white">10</div>
+      <div>
+        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 Ward Council Report</h2>
+        <p class="text-gray-600 text-lg">Click <strong>"📋 Report"</strong> in the header bar to generate an instant report. Auto-fills with all live data. Use the Print button to bring a hard copy to ward council.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">📄 What's In the Report</h3>
+        <div class="space-y-2 text-sm text-gray-700">
+          <div class="flex gap-2 items-start"><span>📊</span><div><strong>4 stat cards</strong> — Investigators, Returning Members, Covenant Path count, Activities This Month</div></div>
+          <div class="flex gap-2 items-start"><span>⛪</span><div><strong>Investigator Activity</strong> — every person who had activity this month with their indicator codes</div></div>
+          <div class="flex gap-2 items-start"><span>💙</span><div><strong>Returning Member Activity</strong> — same breakdown for returning members</div></div>
+          <div class="flex gap-2 items-start"><span>📖</span><div><strong>Covenant Path Members</strong> — baptized members with ordinance count and self-reliance count</div></div>
+          <div class="flex gap-2 items-start"><span>🔴</span><div><strong>Needs Attention</strong> — anyone with zero activity ever logged</div></div>
+          <div class="flex gap-2 items-start"><span>📋</span><div><strong>Action Planner Status</strong> — overdue contacts with who's assigned and what the next action is, plus unassigned people</div></div>
+          <div class="flex gap-2 items-start"><span>📅</span><div><strong>Upcoming Events</strong> — next 3 events from the calendar</div></div>
+          <div class="flex gap-2 items-start"><span>🙏</span><div><strong>Prayer List</strong> — current names being prayed for</div></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-black text-gray-900 mb-4">🖨️ Print &amp; Share</h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div class="flex gap-2 items-start"><span>🖨️</span><div>The <strong>Print</strong> button inside the report modal captures the <em>full</em> report including the Action Planner section — it's not cut off.</div></div>
+          <div class="flex gap-2 items-start"><span>📱</span><div>Alternatively use your browser's native print (Cmd+P / Ctrl+P) — the app hides the background and shows only the report.</div></div>
+          <div class="flex gap-2 items-start"><span>📧</span><div>Screenshot or PDF export works too — share with the bishopric via email or group chat.</div></div>
+        </div>
+        <!-- Mini report preview -->
+        <div class="bg-white rounded-xl border-2 border-amber-200 p-4 mt-4">
+          <div class="font-black text-amber-800 text-sm mb-3">📋 Report Preview</div>
+          <div class="grid grid-cols-4 gap-2 mb-3">
+            <div class="bg-amber-50 rounded-lg p-2 text-center border border-amber-200"><div class="font-black text-amber-700 text-lg">5</div><div class="text-xs text-amber-600">Investigators</div></div>
+            <div class="bg-green-50 rounded-lg p-2 text-center border border-green-200"><div class="font-black text-green-700 text-lg">5</div><div class="text-xs text-green-600">Returning</div></div>
+            <div class="bg-purple-50 rounded-lg p-2 text-center border border-purple-200"><div class="font-black text-purple-700 text-lg">2</div><div class="text-xs text-purple-600">Covenant Path</div></div>
+            <div class="bg-blue-50 rounded-lg p-2 text-center border border-blue-200"><div class="font-black text-blue-700 text-lg">14</div><div class="text-xs text-blue-600">This Month</div></div>
+          </div>
+          <div class="bg-red-50 rounded-lg p-2 border border-red-200 text-xs font-bold text-red-700 mb-2">🔴 Overdue Contacts (2) — Sione F. → Ward Missionaries: "Call re: lesson 3" · Ana K. → EQ President</div>
+          <div class="bg-orange-50 rounded-lg p-2 border border-orange-200 text-xs font-bold text-orange-700">⚠️ Unassigned (1) — Tevita L.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 11: BEST PRACTICES ─────────────────────── -->
+<section id="tips" class="py-24 px-4 bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 text-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-black text-center mb-4">Best Practices</h2>
+    <p class="text-center text-indigo-200 mb-12 font-semibold">How to get the most out of this tool</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">☀️</div>
+        <h3 class="font-black text-lg mb-2">Sunday Routine</h3>
+        <p class="text-indigo-200 text-sm">After sacrament — open This Week, mark everyone contacted, set next contact dates for the coming week. Takes 5 minutes.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">👥</div>
+        <h3 class="font-black text-lg mb-2">Ward Council Prep</h3>
+        <p class="text-indigo-200 text-sm">Before council — pull up Action Board. Walk the four columns left to right. ⚡ Needs Attention names get a quick plan assigned before the meeting ends.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">📝</div>
+        <h3 class="font-black text-lg mb-2">Write Real Next Actions</h3>
+        <p class="text-indigo-200 text-sm">Don't leave the Next Action field empty. "Follow up" is not an action. "Call Sione about the BBQ Thursday" is. Specific = done.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">🔥</div>
+        <h3 class="font-black text-lg mb-2">Build Streaks</h3>
+        <p class="text-indigo-200 text-sm">The 🔥 streak badge is a quiet accountability tool. When a person has 3+ months of consecutive activity, people don't want to break it — use that psychology.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">📤</div>
+        <h3 class="font-black text-lg mb-2">Export Weekly</h3>
+        <p class="text-indigo-200 text-sm">Click 📥 Export every Sunday. Save the JSON backup to Google Drive or email it to yourself. Firebase is reliable, but local backups are your insurance.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
+        <div class="text-3xl mb-3">🇹🇴</div>
+        <h3 class="font-black text-lg mb-2">Use Lea Tonga</h3>
+        <p class="text-indigo-200 text-sm">Toggle the 🇹🇴 Lea Tonga button for full Tongan translation. 200+ UI strings translated. Useful when presenting in ward council or sharing with Tongan-speaking members.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────── -->
+<section class="py-24 px-4 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-black text-center text-indigo-900 mb-12">Common Questions</h2>
+    <div class="space-y-4" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<section class="py-20 px-4 bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 text-white text-center">
+  <div class="text-7xl mb-6">📖</div>
+  <h2 class="text-3xl font-black mb-4">Remember Why We Do This</h2>
+  <div class="bg-white/15 rounded-2xl p-6 max-w-2xl mx-auto mb-8 border border-white/20">
+    <p class="text-lg italic leading-relaxed mb-3">"For behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul"</p>
+    <p class="text-indigo-300 text-sm">— Doctrine &amp; Covenants 4:4</p>
+  </div>
+  <p class="text-indigo-200 mb-4">This tracker is a tool to bring souls unto Christ. May it bless your ward's missionary efforts.</p>
+  <div class="text-indigo-300 text-sm">Made with ❤️ for the Riverton 24th Tongan Ward</div>
+</section>
+
+<!-- Scroll to top -->
+<a href="#hero" class="no-print fixed bottom-8 right-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+</a>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────
+const INDICATORS = [
+  { code:'IAC', emoji:'🎉', name:'Invite Accepted & Came', group:1 },
+  { code:'AC',  emoji:'⛪', name:'Attended Church', group:1 },
+  { code:'TM',  emoji:'📖', name:'Taught by Missionaries', group:1 },
+  { code:'RB',  emoji:'📚', name:'Read Book of Mormon', group:1 },
+  { code:'PB',  emoji:'🙏', name:'Pray About BOM', group:1 },
+  { code:'FHE', emoji:'🏠', name:'Attended FHE', group:1 },
+  { code:'BD',  emoji:'📅', name:'Baptism Date Set', group:1 },
+  { code:'B',   emoji:'✨', name:'Baptized', group:1 },
+  { code:'AA',  emoji:'🎊', name:'Attended Activity', group:1 },
+  { code:'SRV', emoji:'🤝', name:'Service', group:2 },
+  { code:'AI',  emoji:'📬', name:'Activity Invited', group:2 },
+  { code:'AAT', emoji:'🎈', name:'Activity Attended', group:2 },
+  { code:'VIS', emoji:'🏃', name:'Visit', group:2 },
+  { code:'TXT', emoji:'💬', name:'Text / Call', group:2 },
+  { code:'IFH', emoji:'🌳', name:'Invited Family History', group:2 },
+  { code:'ACTIVE',emoji:'💙',name:'Active Member', group:2 },
+  { code:'SS',  emoji:'📝', name:'Scripture Study', group:2 },
+  { code:'C',   emoji:'🕊️', name:'Confirmation', group:2 },
+  { code:'MG',  emoji:'🎯', name:'Met Goal', group:2 },
+  { code:'MC',  emoji:'🤲', name:'Met with Bishop/Counselor', group:2 },
+  { code:'PT',  emoji:'🙌', name:'Patriarchal Interview', group:2 },
+];
+
+const PEOPLE = [
+  { name:'Sione F.', emoji:'😄', tab:'inv', assignedTo:'Ward Missionaries', nextContactDate: getDaysFromNow(-3), nextAction:'Call about lesson 3', lastContactDate: getDaysFromNow(-10), acts:['AC','TM','RB'] },
+  { name:'Ana K.',   emoji:'🌺', tab:'inv', assignedTo:'EQ President',      nextContactDate: getDaysFromNow(2),  nextAction:'Invite to Saturday BBQ', lastContactDate: getDaysFromNow(-5), acts:['AC','FHE'] },
+  { name:'Tevita L.',emoji:'🏋️', tab:'inv', assignedTo:'',                  nextContactDate: getDaysFromNow(8),  nextAction:'', lastContactDate: getDaysFromNow(-20), acts:['TM'] },
+  { name:'Maria T.', emoji:'💜', tab:'ret', assignedTo:'RS President',       nextContactDate: getDaysFromNow(1),  nextAction:'Drop off food', lastContactDate: getDaysFromNow(-2), acts:['AC','SRV','TXT'] },
+  { name:'Peni V.',  emoji:'⚽', tab:'ret', assignedTo:'YM President',       nextContactDate: getDaysFromNow(12), nextAction:'Invite to Youth Night', lastContactDate: null, acts:['VIS'] },
+];
+
+function getDaysFromNow(n) {
+  const d = new Date(); d.setDate(d.getDate()+n);
+  return d.toISOString().split('T')[0];
+}
+
+// ── TRACKER SIMULATOR ────────────────────────────────────
+function buildTracker() {
+  const tbody = document.getElementById('trackerBody');
+  if (!tbody) return;
+  PEOPLE.slice(0,3).forEach((p,i) => {
+    const streak = p.acts.length > 0 ? Math.floor(Math.random()*3)+1 : 0;
+    const months = ['JAN','FEB','MAR'];
+    const activities = [['AC','TM'],['RB'],[]];
+    tbody.innerHTML += `
+      <tr class="${i%2===0?'bg-white':'bg-amber-50/40'} hover:bg-amber-50/70 transition-all">
+        <td class="p-3 border-r border-amber-100">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">${p.emoji}</span>
+            <div>
+              <div class="font-black text-sm text-gray-900">${p.name}</div>
+              <div class="flex gap-1 mt-0.5">
+                ${streak>0?`<span class="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full font-black">🔥 ${streak}mo</span>`:''}
+                <span class="text-xs bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full font-bold">${p.acts.length} total</span>
+              </div>
+            </div>
+          </div>
+        </td>
+        ${months.map((m,mi) => {
+          const acts = activities[mi];
+          return `<td class="p-3 text-center border-l border-gray-100 ${m==='FEB'?'bg-amber-50/40':''}">
+            ${acts.length>0
+              ? acts.map(code => {const ind=INDICATORS.find(x=>x.code===code);return `<span title="${ind?.name||code}" class="text-lg">${ind?.emoji||'•'}</span>`;}).join('')
+              : `<button onclick="simLogActivity(this,'${m}','${p.name}')" class="text-gray-300 text-2xl hover:text-amber-500 transition-colors sim-btn">+</button>`}
+          </td>`;
+        }).join('')}
+        <td class="p-2 border-l border-gray-100 min-w-[140px]">
+          <div class="text-xs">
+            ${p.assignedTo ? `<span class="block text-indigo-600 font-bold mb-1">👤 ${p.assignedTo}</span>` : `<span class="block text-red-400 font-bold mb-1">⚠️ Unassigned</span>`}
+            ${p.nextContactDate ? `<span class="block text-gray-500 text-xs mb-1">📅 ${p.nextContactDate.slice(5)}</span>` : ''}
+            ${p.nextAction ? `<span class="block text-gray-600 italic text-xs">📝 ${p.nextAction.slice(0,30)}...</span>` : ''}
+          </div>
+        </td>
+      </tr>`;
+  });
+}
+
+window.simLogActivity = (btn, month, name) => {
+  const inds = ['AC','TM','RB','TXT','VIS'];
+  const ind = INDICATORS.find(x=>x.code===inds[Math.floor(Math.random()*inds.length)]);
+  btn.parentElement.innerHTML = `<span class="text-xl" title="${ind.name}">${ind.emoji}</span>`;
+  showToast(`✓ Logged ${ind.code} for ${name} in ${month}`);
+};
+
+// ── PLAN PREVIEW ─────────────────────────────────────────
+let simContacted = false;
+window.updatePlanPreview = () => {
+  const assign = document.getElementById('simAssign').value;
+  const date = document.getElementById('simDate').value;
+  const action = document.getElementById('simAction').value;
+  const prev = document.getElementById('planPreview');
+  if (!assign && !date && !action) { prev.textContent = 'Fill in the fields above to see the This Week preview...'; return; }
+  const today = new Date(); today.setHours(0,0,0,0);
+  let urgency = '⚪ No date set';
+  if (date) {
+    const d = new Date(date+'T00:00:00'); const diff = Math.ceil((d-today)/(86400000));
+    if (diff < 0) urgency = `🔴 ${Math.abs(diff)} day(s) overdue`;
+    else if (diff === 0) urgency = '🔥 Due today!';
+    else if (diff <= 7) urgency = `🟡 Due in ${diff} day(s)`;
+    else urgency = `🟢 Coming up in ${diff} days`;
+  }
+  prev.innerHTML = `<div class="text-xs font-black text-gray-700 mb-1">This Week preview:</div>
+    <div class="font-bold text-gray-900">${assign ? '👤 '+assign : '⚠️ Unassigned'}</div>
+    <div class="text-gray-600 mt-0.5">${urgency}</div>
+    ${action ? `<div class="text-gray-600 mt-0.5">📝 ${action}</div>` : ''}`;
+  prev.classList.remove('italic','text-gray-500');
+  prev.classList.add('text-gray-700');
+};
+
+window.simMarkContacted = () => {
+  const btn = document.getElementById('simMarkContacted');
+  const today = new Date().toISOString().split('T')[0];
+  btn.textContent = `✅ Last contacted: ${today.slice(5)}`;
+  btn.className = 'w-full py-2 text-sm font-black rounded-lg bg-green-50 text-green-700 border border-green-200';
+  showToast('✓ Marked as contacted today!');
+};
+
+// ── THIS WEEK SIMULATOR ──────────────────────────────────
+let weekFilter = 'all';
+window.setWeekFilter = (f) => {
+  weekFilter = f;
+  ['all','inv','ret'].forEach(k => {
+    const b = document.getElementById('wf-'+k);
+    if (!b) return;
+    if (k===f) { b.className='px-3 py-1.5 rounded-lg text-xs font-black bg-white text-rose-700 shadow'; }
+    else { b.className='px-3 py-1.5 rounded-lg text-xs font-black text-white'; }
+  });
+  renderThisWeekSim();
+};
+
+function renderThisWeekSim() {
+  const container = document.getElementById('thisWeekSim');
+  if (!container) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const filtered = PEOPLE.filter(p => weekFilter==='all' || (weekFilter==='inv'&&p.tab==='inv') || (weekFilter==='ret'&&p.tab==='ret'));
+  const getDiff = (ds) => { if(!ds) return null; const d=new Date(ds+'T00:00:00'); d.setHours(0,0,0,0); return Math.ceil((d-today)/86400000); };
+  const overdue = filtered.filter(p=>p.nextContactDate&&getDiff(p.nextContactDate)<0);
+  const thisWeek = filtered.filter(p=>p.nextContactDate&&getDiff(p.nextContactDate)>=0&&getDiff(p.nextContactDate)<=7);
+  const upcoming = filtered.filter(p=>p.nextContactDate&&getDiff(p.nextContactDate)>7);
+  const noDate = filtered.filter(p=>!p.nextContactDate);
+
+  const renderCard = (p, urg) => {
+    const diff = getDiff(p.nextContactDate);
+    const badge = diff===null?'⚪ No date':diff<0?`🔴 ${Math.abs(diff)}d overdue`:diff===0?'🔥 Today!':diff===1?'⚡ Tomorrow':`📅 In ${diff}d`;
+    const bgColors = {overdue:'border-l-4 border-red-400 bg-red-50',week:'border-l-4 border-yellow-400 bg-yellow-50',upcoming:'border-l-4 border-green-400 bg-green-50',none:'border-l-4 border-gray-200 bg-gray-50'};
+    const tabLabel = p.tab==='inv'?'<span class="text-xs text-amber-600 font-bold">Investigator</span>':'<span class="text-xs text-green-600 font-bold">Returning</span>';
+    return `<div class="rounded-xl p-4 ${bgColors[urg]}">
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+          <span class="text-2xl">${p.emoji}</span>
+          <div class="min-w-0">
+            <div class="font-black text-gray-900 text-sm">${p.name}</div>
+            <div class="flex gap-2 flex-wrap mt-0.5">
+              ${p.assignedTo?`<span class="text-xs bg-white border border-gray-200 text-gray-700 px-2 py-0.5 rounded-full font-bold">👤 ${p.assignedTo}</span>`:'<span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-bold">⚠️ Unassigned</span>'}
+              ${tabLabel}
+            </div>
+            ${p.nextAction?`<div class="mt-1 text-xs text-gray-700 bg-white/70 rounded px-2 py-1 font-semibold">📝 ${p.nextAction}</div>`:'<div class="mt-1 text-xs text-gray-400 italic">No next action written</div>'}
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-2">
+          <span class="text-xs font-black px-3 py-1 rounded-full ${urg==='overdue'?'bg-red-500 text-white':urg==='week'?'bg-yellow-400 text-yellow-900':urg==='upcoming'?'bg-green-100 text-green-800':'bg-gray-100 text-gray-500'}">${badge}</span>
+          <button onclick="simMarkContactedWeek('${p.name}',this)" class="text-xs font-black px-3 py-1.5 bg-white border-2 border-rose-300 text-rose-600 rounded-lg sim-btn">✅ Mark Contacted</button>
+          <input type="date" value="${p.nextContactDate||''}" class="text-xs border border-gray-300 rounded-lg px-2 py-1 focus:outline-none bg-white" title="Set next contact date" onchange="showToast('📅 Date updated for ${p.name}')" />
+        </div>
+      </div>
+    </div>`;
+  };
+
+  let html = '';
+  if (overdue.length) html += `<div class="bg-white/95 rounded-2xl shadow-lg overflow-hidden border-2 border-red-200"><div class="bg-gradient-to-r from-red-500 to-red-600 px-5 py-3 flex items-center gap-2"><span>🔴</span><span class="font-black text-white text-base">Overdue <span class="bg-white/30 text-white text-xs px-2 py-0.5 rounded-full ml-1">${overdue.length}</span></span></div><div class="p-4 space-y-3">${overdue.map(p=>renderCard(p,'overdue')).join('')}</div></div>`;
+  if (thisWeek.length) html += `<div class="bg-white/95 rounded-2xl shadow-lg overflow-hidden border-2 border-yellow-200"><div class="bg-gradient-to-r from-yellow-400 to-orange-400 px-5 py-3 flex items-center gap-2"><span>🟡</span><span class="font-black text-yellow-900 text-base">Due This Week <span class="bg-yellow-900/20 text-yellow-900 text-xs px-2 py-0.5 rounded-full ml-1">${thisWeek.length}</span></span></div><div class="p-4 space-y-3">${thisWeek.map(p=>renderCard(p,'week')).join('')}</div></div>`;
+  if (upcoming.length) html += `<div class="bg-white/95 rounded-2xl shadow-lg overflow-hidden border-2 border-green-200"><div class="bg-gradient-to-r from-green-400 to-emerald-500 px-5 py-3 flex items-center gap-2"><span>🟢</span><span class="font-black text-white text-base">Upcoming <span class="bg-white/30 text-white text-xs px-2 py-0.5 rounded-full ml-1">${upcoming.length}</span></span></div><div class="p-4 space-y-3">${upcoming.map(p=>renderCard(p,'upcoming')).join('')}</div></div>`;
+  if (noDate.length) html += `<div class="bg-white/95 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200"><div class="bg-gray-200 px-5 py-3 flex items-center gap-2"><span>⚪</span><span class="font-black text-gray-700 text-base">No Contact Date Set <span class="text-xs px-2 py-0.5 rounded-full ml-1 bg-gray-300 text-gray-600">${noDate.length}</span></span></div><div class="p-4 space-y-3">${noDate.map(p=>renderCard(p,'none')).join('')}</div></div>`;
+  if (!filtered.length) html = `<div class="text-center py-8 text-gray-400"><div class="text-4xl mb-2">🔍</div><div class="font-bold">No people in this filter</div></div>`;
+  container.innerHTML = html;
+}
+
+window.simMarkContactedWeek = (name, btn) => {
+  btn.textContent = '✅ Done!';
+  btn.className = 'text-xs font-black px-3 py-1.5 bg-green-50 border-2 border-green-300 text-green-600 rounded-lg';
+  showToast(`✓ Marked ${name} as contacted today`);
+};
+
+window.simSendSummary = () => {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const getDiff = (ds) => { if(!ds) return null; const d=new Date(ds+'T00:00:00'); d.setHours(0,0,0,0); return Math.ceil((d-today)/86400000); };
+  const overdue = PEOPLE.filter(p=>p.nextContactDate&&getDiff(p.nextContactDate)<0);
+  const thisW = PEOPLE.filter(p=>p.nextContactDate&&getDiff(p.nextContactDate)>=0&&getDiff(p.nextContactDate)<=7);
+  let msg = '📋 This Week\'s Focus — Riverton 24th Tongan Ward\n\n';
+  if (overdue.length) { msg+='🔴 OVERDUE:\n'; overdue.forEach(p=>{ msg+=`  • ${p.name}${p.assignedTo?' → '+p.assignedTo:''}: ${p.nextAction||'Contact needed'}\n`; }); }
+  if (thisW.length) { msg+='\n🟡 DUE THIS WEEK:\n'; thisW.forEach(p=>{ const d=getDiff(p.nextContactDate); const when=d===0?'Today':d===1?'Tomorrow':`${new Date(p.nextContactDate+'T00:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}`; msg+=`  • ${p.name} — ${when}${p.assignedTo?' ('+p.assignedTo+')':''}: ${p.nextAction||'Follow up'}\n`; }); }
+  navigator.clipboard?.writeText(msg).then(()=>showToast('📋 Weekly summary copied to clipboard!')).catch(()=>showToast('📋 Summary ready to share!'));
+};
+
+// ── ACTION BOARD SIMULATOR ───────────────────────────────
+function buildActionBoard() {
+  const container = document.getElementById('actionBoardSim');
+  if (!container) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const getCol = (p) => {
+    if (p.acts.includes('B')) return 'milestone';
+    if (p.acts.length===0) return 'new';
+    const daysSince = p.lastContactDate ? Math.ceil((today-new Date(p.lastContactDate+'T00:00:00'))/86400000) : 999;
+    if (daysSince > 30) return 'attention';
+    return 'inprogress';
+  };
+  const cols = {
+    new:       { label:'🌱 New',             sub:'No engagement yet',      hdr:'from-slate-500 to-slate-600', border:'border-slate-200', people:[] },
+    inprogress:{ label:'🔄 In Progress',      sub:'Actively engaged',       hdr:'from-blue-500 to-blue-600',  border:'border-blue-200',  people:[] },
+    attention: { label:'⚡ Needs Attention',  sub:'30+ days no contact',    hdr:'from-orange-500 to-red-500', border:'border-orange-200',people:[] },
+    milestone: { label:'🏆 Milestone Hit',    sub:'Baptism date or baptized',hdr:'from-emerald-500 to-teal-600',border:'border-emerald-200',people:[] },
+  };
+  PEOPLE.forEach(p => cols[getCol(p)].people.push(p));
+  container.innerHTML = Object.entries(cols).map(([k,col])=>`
+    <div class="bg-white/95 rounded-2xl shadow-lg overflow-hidden border-2 ${col.border}">
+      <div class="bg-gradient-to-r ${col.hdr} px-4 py-3">
+        <div class="font-black text-white text-sm">${col.label} <span class="bg-white/30 text-white text-xs px-2 py-0.5 rounded-full ml-1">${col.people.length}</span></div>
+        <div class="text-white/75 text-xs mt-0.5">${col.sub}</div>
+      </div>
+      <div class="p-3 space-y-2 min-h-[100px]">
+        ${col.people.length ? col.people.map(p=>{
+          const daysSince = p.lastContactDate ? Math.ceil((today-new Date(p.lastContactDate+'T00:00:00'))/86400000) : null;
+          const streak = p.acts.length>0?Math.floor(Math.random()*3)+1:0;
+          return `<div class="bg-white rounded-xl p-3 border border-gray-100 shadow-sm">
+            <div class="flex items-start gap-2">
+              <span class="text-lg">${p.emoji}</span>
+              <div class="flex-1 min-w-0">
+                <div class="font-black text-xs text-gray-900">${p.name}</div>
+                <div class="flex gap-1 flex-wrap mt-0.5">
+                  ${p.assignedTo?`<span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-semibold">${p.assignedTo}</span>`:'<span class="text-xs bg-red-50 text-red-500 px-1.5 py-0.5 rounded font-semibold">Unassigned</span>'}
+                  ${streak>0?`<span class="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-black">🔥 ${streak}mo</span>`:''}
+                </div>
+                ${p.nextAction?`<div class="mt-1 text-xs text-gray-500 bg-gray-50 rounded px-1.5 py-0.5">📝 ${p.nextAction.slice(0,35)}</div>`:''}
+                ${daysSince!==null?`<div class="text-xs text-gray-400 mt-0.5">${daysSince===0?'Today':daysSince+'d ago'}</div>`:''}
+              </div>
+            </div>
+          </div>`;
+        }).join('') : `<div class="text-center py-6 text-gray-300 text-xs font-bold">No one here</div>`}
+      </div>
+    </div>`).join('');
+}
+
+// ── INDICATORS ───────────────────────────────────────────
+function buildIndicators() {
+  const g1 = document.getElementById('indList1');
+  const g2 = document.getElementById('indList2');
+  if (!g1||!g2) return;
+  INDICATORS.filter(i=>i.group===1).forEach(ind => {
+    g1.innerHTML += `<div class="flex items-center gap-2 bg-amber-50 rounded-lg p-2 border border-amber-100">
+      <span class="text-xl">${ind.emoji}</span>
+      <div><span class="inline-block px-2 py-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-black rounded">${ind.code}</span><div class="text-xs text-gray-600 mt-0.5">${ind.name}</div></div></div>`;
+  });
+  INDICATORS.filter(i=>i.group===2).forEach(ind => {
+    g2.innerHTML += `<div class="flex items-center gap-2 bg-blue-50 rounded-lg p-2 border border-blue-100">
+      <span class="text-xl">${ind.emoji}</span>
+      <div><span class="inline-block px-2 py-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-black rounded">${ind.code}</span><div class="text-xs text-gray-600 mt-0.5">${ind.name}</div></div></div>`;
+  });
+}
+
+// ── COVENANT PATH SIM ────────────────────────────────────
+function buildCovenant() {
+  const container = document.getElementById('covenantSim');
+  if (!container) return;
+  const ordinances = [
+    { key:'ap', emoji:'✋', label:'Aaronic Priesthood', path:'male' },
+    { key:'tb', emoji:'🏛️', label:'Temple Baptisms',   path:'all' },
+    { key:'pb', emoji:'📜', label:'Patriarchal Blessing', path:'all' },
+    { key:'mp', emoji:'👔', label:'Melchizedek Priesthood', path:'male' },
+    { key:'end',emoji:'⭐', label:'Temple Endowment', path:'all' },
+  ];
+  let checked = {};
+  container.innerHTML = `
+    <div class="flex items-center gap-4 mb-5 flex-wrap">
+      <span class="text-sm font-black text-gray-700">Member Type:</span>
+      <div class="flex gap-2">
+        <button onclick="setCPType('Male',this)" class="px-4 py-2 rounded-xl text-xs font-black bg-blue-500 text-white shadow sim-btn" id="cpt-Male">👔 Male</button>
+        <button onclick="setCPType('Female',this)" class="px-4 py-2 rounded-xl text-xs font-black bg-gray-100 text-gray-600 sim-btn" id="cpt-Female">🌸 Female</button>
+        <button onclick="setCPType('OAY',this)" class="px-4 py-2 rounded-xl text-xs font-black bg-gray-100 text-gray-600 sim-btn" id="cpt-OAY">🕊️ OAY</button>
+      </div>
+    </div>
+    <div id="cpOrdItems" class="space-y-3 mb-5"></div>
+    <div id="cpStatus" class="bg-blue-50 rounded-xl p-4 border border-blue-200 text-sm text-blue-800 font-semibold"></div>`;
+  window._cpType = 'Male';
+  renderCPItems();
+}
+
+window.setCPType = (type, btn) => {
+  ['Male','Female','OAY'].forEach(t => {
+    const b = document.getElementById('cpt-'+t);
+    if (b) b.className = t===type ? 'px-4 py-2 rounded-xl text-xs font-black bg-blue-500 text-white shadow sim-btn' : 'px-4 py-2 rounded-xl text-xs font-black bg-gray-100 text-gray-600 sim-btn';
+  });
+  window._cpType = type;
+  window._cpChecked = {};
+  renderCPItems();
+};
+
+function renderCPItems() {
+  const type = window._cpType || 'Male';
+  const checked = window._cpChecked || {};
+  const items = type==='Male' ? [
+    {key:'ap',emoji:'✋',label:'Aaronic Priesthood'},{key:'tb',emoji:'🏛️',label:'Temple Baptisms'},
+    {key:'pb',emoji:'📜',label:'Patriarchal Blessing'},{key:'mp',emoji:'👔',label:'Melchizedek Priesthood'},
+    {key:'end',emoji:'⭐',label:'Temple Endowment'}
+  ] : type==='Female' ? [
+    {key:'tb',emoji:'🏛️',label:'Temple Baptisms'},{key:'pb',emoji:'📜',label:'Patriarchal Blessing'},{key:'end',emoji:'⭐',label:'Temple Endowment'}
+  ] : [{key:'tb',emoji:'🏛️',label:'Temple Baptisms'}];
+
+  const el = document.getElementById('cpOrdItems');
+  if (!el) return;
+  el.innerHTML = items.map(item=>`
+    <label class="flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all border-2 sim-btn ${checked[item.key]?'bg-gradient-to-r from-purple-500 to-indigo-600 text-white border-transparent':'bg-white border-gray-200 hover:border-purple-200'}">
+      <input type="checkbox" ${checked[item.key]?'checked':''} onchange="toggleCPItem('${item.key}',this.checked)" class="w-5 h-5 rounded" />
+      <span class="text-2xl">${item.emoji}</span>
+      <div>
+        <div class="font-black text-sm">${item.label}</div>
+      </div>
+      ${checked[item.key]?'<span class="ml-auto font-black text-xs bg-white/20 px-2 py-1 rounded">✓ Done</span>':''}
+    </label>`).join('');
+
+  const done = items.filter(i=>checked[i.key]).length;
+  const total = items.length;
+  const statusEl = document.getElementById('cpStatus');
+  if (statusEl) {
+    if (done===total) {
+      statusEl.className='bg-emerald-50 rounded-xl p-4 border border-emerald-200 text-sm text-emerald-800 font-semibold';
+      statusEl.innerHTML='🏆 Complete! This person has received all ordinances for their path.';
+    } else {
+      statusEl.className='bg-blue-50 rounded-xl p-4 border border-blue-200 text-sm text-blue-800 font-semibold';
+      statusEl.innerHTML=`${done}/${total} ordinances complete. Next: ${items.find(i=>!checked[i.key])?.emoji} ${items.find(i=>!checked[i.key])?.label}`;
+    }
+  }
+}
+
+window.toggleCPItem = (key, val) => {
+  window._cpChecked = window._cpChecked || {};
+  window._cpChecked[key] = val;
+  renderCPItems();
+};
+
+// ── EVENTS SIMULATOR ─────────────────────────────────────
+const simEvents = [
+  { name:'Ward BBQ', date:getDaysFromNow(3), time:'5:00 PM', type:'🎉 Social Event', invite:true },
+  { name:'Youth Activity Night', date:getDaysFromNow(7), time:'6:30 PM', type:'🏃 Youth Activity', invite:false },
+  { name:'Tongan Cultural Night', date:getDaysFromNow(14), time:'7:00 PM', type:'🏛️ Church Activity', invite:true },
+];
+window.addSimEvent = () => {
+  simEvents.push({ name:'New Event', date:getDaysFromNow(10), time:'6:00 PM', type:'🎉 Social Event', invite:false });
+  renderEventSim();
+  showToast('✓ Event added!');
+};
+function renderEventSim() {
+  const container = document.getElementById('eventSim');
+  if (!container) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  container.innerHTML = simEvents.map((ev,i) => {
+    const d = new Date(ev.date+'T00:00:00'); const diff = Math.ceil((d-today)/86400000);
+    const badge = diff===0?'🔥 TODAY':diff===1?'⚡ Tomorrow':`📅 ${diff} days`;
+    const badgeBg = diff===0?'bg-red-100 text-red-700':diff<=7?'bg-orange-100 text-orange-700':'bg-green-100 text-green-700';
+    return `<div class="flex items-center gap-3 p-3 rounded-xl bg-green-50 border border-green-100 hover:shadow-md transition-all">
+      <div class="text-2xl">${ev.type.split(' ')[0]}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-black text-gray-900 text-sm">${ev.invite?'✨ ':''}${ev.name}</div>
+        <div class="text-xs text-gray-500 font-semibold">${d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}${ev.time?' · '+ev.time:''}</div>
+        ${ev.invite?'<span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-bold">✨ Invite-ready</span>':''}
+      </div>
+      <span class="text-xs font-black px-2 py-1 rounded-lg ${badgeBg} flex-shrink-0">${badge}</span>
+      <button onclick="showToast('📱 Event details copied!')" class="text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded-full font-black sim-btn">📱 Share</button>
+    </div>`;
+  }).join('');
+}
+
+// ── PRAYER LIST SIM ──────────────────────────────────────
+const prayerPeople = [{id:1,name:'Sione F.',notes:'Baptism date set for June 15'}];
+const quickAddNames = ['Ana K.','Tevita L.','Maria T.'];
+
+function renderPrayerSim() {
+  const listEl = document.getElementById('prayerList');
+  const quickEl = document.getElementById('quickAddBtns');
+  if (!listEl||!quickEl) return;
+  listEl.innerHTML = prayerPeople.length ? prayerPeople.map(p=>`
+    <div class="flex items-center gap-3 p-3 bg-indigo-50 rounded-xl border border-indigo-100">
+      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-black text-sm flex-shrink-0">${prayerPeople.indexOf(p)+1}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-black text-gray-900 text-sm">${p.name}</div>
+        <input type="text" value="${p.notes||''}" placeholder="Notes..." class="w-full mt-1 px-2 py-1 border border-indigo-100 rounded-lg text-xs text-gray-600 focus:outline-none" oninput="showToast('Notes updated')" />
+      </div>
+      <button onclick="removePrayerSim(${p.id})" class="text-red-400 hover:text-red-600 p-1 rounded-lg transition-all text-lg sim-btn">🗑️</button>
+    </div>`).join('') : `<div class="text-center py-6 text-gray-400 text-sm"><div class="text-4xl mb-2">🕊️</div>Prayer list is empty</div>`;
+  const alreadyAdded = prayerPeople.map(p=>p.name);
+  quickEl.innerHTML = quickAddNames.filter(n=>!alreadyAdded.includes(n)).map(n=>`
+    <button onclick="addPrayerFromQuick('${n}')" class="flex items-center gap-2 px-3 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 rounded-xl font-bold text-xs border border-indigo-200 sim-btn">👤 ${n}</button>`).join('');
+}
+window.addSimPrayer = () => {
+  const inp = document.getElementById('prayerInput');
+  if (!inp||!inp.value.trim()) return;
+  prayerPeople.push({id:Date.now(),name:inp.value.trim(),notes:''});
+  inp.value=''; renderPrayerSim(); showToast('🙏 Added to prayer list!');
+};
+window.addPrayerFromQuick = (name) => { prayerPeople.push({id:Date.now(),name,notes:''}); renderPrayerSim(); showToast(`🙏 ${name} added to prayer list!`); };
+window.removePrayerSim = (id) => { const i=prayerPeople.findIndex(p=>p.id===id); if(i>-1){prayerPeople.splice(i,1);} renderPrayerSim(); showToast('Removed from prayer list'); };
+
+// ── FAQ ──────────────────────────────────────────────────
+const FAQS = [
+  { q:'Can multiple people use this at the same time?', a:'Yes! Firebase syncs in real-time. Ward missionaries, EQ President, RS President, and the bishop can all have it open simultaneously. Changes appear on everyone\'s screen within seconds.' },
+  { q:'What\'s the difference between "Assigned" and the Plan column?', a:'Previously there were two separate dropdowns — one for the organization (EQ, RS, etc.) and one for the leader (EQ President, RS President, etc.). They\'ve been merged into a single "Assign To" dropdown in the Plan column. One selection updates both.' },
+  { q:'How does the Action Board decide which column a person goes in?', a:'It uses smart logic: zero activities = New. Has activities + contacted in last 30 days = In Progress. Has activities but last contact (or last activity if no contact logged) was 30+ days ago = Needs Attention. Baptism date set or baptized = Milestone.' },
+  { q:'What if I forget to hit "Mark Contacted"?', a:'The Action Board falls back to your most recently logged activity month as a proxy for contact. So if you logged an AC activity in May, it won\'t flag the person as Needs Attention until late June.' },
+  { q:'How do I change the background image?', a:'Click the 🖼️ icon in the top header bar. You can paste any image URL or choose from the preset suggestions (Jordan River Temple, Mountains, Night Sky). The setting syncs to all devices.' },
+  { q:'How does the language toggle work?', a:'Click "🇹🇴 Lea Tonga" in the header to switch the entire UI to Tongan. Over 200 UI strings are translated. Click again to switch back to English. Language setting is per-session only — doesn\'t sync to other devices.' },
+  { q:'What does the streak badge mean?', a:'The 🔥 streak badge on the tracker name cell shows consecutive months with at least one activity logged. E.g., "🔥 3mo" means activity was logged in each of the last 3 months in a row. It\'s a quiet accountability signal.' },
+  { q:'How do I print the Ward Council Report?', a:'Click "📋 Report" in the header, then click the "🖨️ Print" button inside the modal. The app renders a clean print version of the full report including the Action Planner Status section. You can also use Cmd+P / Ctrl+P.' },
+  { q:'What happens when I check the "B" (Baptized) indicator?', a:'It automatically moves that person from the Investigators or Returning Members list to the Covenant Path section. Their full activity history is preserved. A Covenant Path card appears where you can track ordinances.' },
+  { q:'Does the app work on mobile?', a:'Yes, it\'s fully responsive. The Plan column, notes, and stats columns hide on mobile to keep the table readable. The This Week and Action Board views work great on phones since they\'re card-based.' },
+];
+function buildFAQ() {
+  const el = document.getElementById('faqList');
+  if (!el) return;
+  el.innerHTML = FAQS.map((f,i)=>`
+    <div class="glass rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+      <button onclick="toggleFAQ(${i})" class="w-full flex items-center justify-between p-5 text-left sim-btn">
+        <span class="font-black text-indigo-900 text-base pr-4">❓ ${f.q}</span>
+        <span id="faq-arrow-${i}" class="text-indigo-400 font-black text-xl flex-shrink-0">+</span>
+      </button>
+      <div id="faq-body-${i}" class="hidden px-5 pb-5 text-gray-700 leading-relaxed">${f.a}</div>
+    </div>`).join('');
+}
+window.toggleFAQ = (i) => {
+  const body = document.getElementById('faq-body-'+i);
+  const arrow = document.getElementById('faq-arrow-'+i);
+  const isOpen = !body.classList.contains('hidden');
+  body.classList.toggle('hidden');
+  arrow.textContent = isOpen ? '+' : '−';
+};
+
+// ── TOAST ────────────────────────────────────────────────
+function showToast(msg) {
+  let t = document.getElementById('simToast');
+  if (!t) { t=document.createElement('div'); t.id='simToast'; t.className='fixed bottom-24 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-5 py-3 rounded-2xl text-sm font-black shadow-2xl z-50 transition-all'; document.body.appendChild(t); }
+  t.textContent = msg;
+  t.style.opacity='1'; t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(8px)'; },2200);
+}
+
+// ── NAV DOTS ─────────────────────────────────────────────
+const sections = ['hero','overview','tracker','plan','thisweek','actionboard','indicators','covenant','kpi','events','prayer','report','tips'];
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const idx = sections.indexOf(e.target.id);
+      document.querySelectorAll('#navDots a').forEach((d,i)=>{ d.className = i===idx ? 'nav-dot active' : 'nav-dot'; });
+    }
+  });
+}, {threshold:.3});
+sections.forEach(id=>{ const el=document.getElementById(id); if(el) observer.observe(el); });
+
+// ── INIT ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildTracker();
+  renderThisWeekSim();
+  buildActionBoard();
+  buildIndicators();
+  buildCovenant();
+  renderEventSim();
+  renderPrayerSim();
+  buildFAQ();
+  // Set today as default for plan sim date
+  const dateInput = document.getElementById('simDate');
+  if (dateInput) dateInput.value = getDaysFromNow(5);
+});
+</script>
 </body>
 </html>
