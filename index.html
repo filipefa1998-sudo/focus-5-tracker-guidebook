@@ -35,7 +35,7 @@
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <div class="flex items-center gap-2">
       <span class="text-2xl">📋</span>
-      <span class="font-black text-indigo-900 text-sm md:text-base">Focus 5 Guide</span>
+      <span class="font-black text-indigo-900 text-sm md:text-base" data-en="Focus 5 Guide" data-to="Fakahinohino Focus 5">Focus 5 Guide</span>
     </div>
     <div class="flex items-center gap-1 no-print" id="navDots">
       <a href="#hero" class="nav-dot active" title="Home"></a>
@@ -52,7 +52,10 @@
       <a href="#report" class="nav-dot" title="Ward Council Report"></a>
       <a href="#tips" class="nav-dot" title="Best Practices"></a>
     </div>
+    <div class="flex items-center gap-2">
+    <button onclick="toggleGuideLang()" id="langToggleBtn" class="no-print flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-black border-2 border-indigo-200 bg-white text-indigo-700 hover:bg-indigo-50 transition-all shadow-sm">🇹🇴 <span id="langBtnLabel">Lea Tonga</span></button>
     <a href="https://filipefa1998-sudo.github.io/focus5-tracker/" target="_blank" class="no-print bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-xl text-xs font-black shadow hover:shadow-lg transition-all">Open App →</a>
+  </div>
   </div>
 </nav>
 
@@ -60,15 +63,15 @@
 <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 pt-16 px-4">
   <div class="text-center text-white max-w-4xl mx-auto fade-up">
     <div class="text-8xl mb-6">📋</div>
-    <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Focus 5 Missionary Tracker</h1>
-    <p class="text-xl text-indigo-200 mb-3 font-semibold">Complete User Guide — Riverton 24th Tongan Ward</p>
-    <p class="text-sm text-indigo-300 mb-8">Updated with This Week, Action Board, Plan Column & more</p>
+    <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight" data-en="Focus 5 Missionary Tracker" data-to="Muimui ʻi he Nima — Kau Misionale">Focus 5 Missionary Tracker</h1>
+    <p class="text-xl text-indigo-200 mb-3 font-semibold" data-en="Complete User Guide — Riverton 24th Tongan Ward" data-to="Fakahinohino Kakato — Uāti Tonga ko Riverton 24">Complete User Guide — Riverton 24th Tongan Ward</p>
+    <p class="text-sm text-indigo-300 mb-8" data-en="Updated with This Week, Action Board, Plan Column &amp; more" data-to="Foʻou: ʻAhi Ni, Papa Ngāue, Kolama Palani &amp; lahi ange">Updated with This Week, Action Board, Plan Column & more</p>
     <div class="bg-white/15 rounded-2xl p-6 max-w-2xl mx-auto mb-8 border border-white/20">
       <p class="text-lg italic leading-relaxed">"And if it so be that you should labor all your days in crying repentance unto this people, and bring, save it be one soul unto me, how great shall be your joy with him in the kingdom of my Father!"</p>
       <p class="text-indigo-300 text-sm mt-3">— Doctrine &amp; Covenants 18:15</p>
     </div>
     <div class="flex flex-wrap gap-3 justify-center">
-      <a href="#overview" class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-black text-lg shadow-2xl hover:bg-indigo-50 transition-all">Start Guide ↓</a>
+      <a href="#overview" class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-black text-lg shadow-2xl hover:bg-indigo-50 transition-all" data-en="Start Guide ↓" data-to="Kamata Fakahinohino ↓">Start Guide ↓</a>
       <a href="https://filipefa1998-sudo.github.io/focus5-tracker/" target="_blank" class="no-print bg-white/20 border border-white/40 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white/30 transition-all">Open App →</a>
     </div>
   </div>
@@ -77,48 +80,48 @@
 <!-- ── OVERVIEW ───────────────────────────────────────── -->
 <section id="overview" class="py-24 px-4">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-black text-center text-indigo-900 mb-4">What's Inside This App</h2>
-    <p class="text-center text-gray-500 mb-12 font-semibold">8 interconnected tools — all in one file, synced in real-time via Firebase</p>
+    <h2 class="text-4xl font-black text-center text-indigo-900 mb-4" data-en="What's Inside This App" data-to="Ko e Hā ʻoku ʻi Loto ʻi he App Ni">What's Inside This App</h2>
+    <p class="text-center text-gray-500 mb-12 font-semibold" data-en="8 interconnected tools — all in one file, synced in real-time via Firebase" data-to="Ngaahi meʻangāue 8 — kotoa ʻi he faile ʻe taha, fakafetaulaki taimi moʻoni">8 interconnected tools — all in one file, synced in real-time via Firebase</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <a href="#tracker" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all group">
         <div class="text-4xl mb-3">📅</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Monthly Tracker</div>
-        <div class="text-xs text-gray-500">Log activities per person per month</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Monthly Tracker" data-to="Muimui Māhina">Monthly Tracker</div>
+        <div class="text-xs text-gray-500" data-en="Log activities per person per month" data-to="Tohi ngāue ki he taha kotoa māhina kotoa">Log activities per person per month</div>
       </a>
       <a href="#thisweek" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">📋</div>
-        <div class="font-black text-gray-900 text-sm mb-1">This Week</div>
-        <div class="text-xs text-gray-500">Who to contact and by when</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="This Week" data-to="ʻAhi Ni">This Week</div>
+        <div class="text-xs text-gray-500" data-en="Who to contact and by when" data-to="Ko hai ke fetuʻutaki mo ia, pea ʻi ʻafeʻi">Who to contact and by when</div>
       </a>
       <a href="#actionboard" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">🗂️</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Action Board</div>
-        <div class="text-xs text-gray-500">Kanban war-room for ward council</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Action Board" data-to="Papa Ngāue">Action Board</div>
+        <div class="text-xs text-gray-500" data-en="Kanban war-room for ward council" data-to="Papa ngāue ki he kaunisolo uāti">Kanban war-room for ward council</div>
       </a>
       <a href="#kpi" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">📊</div>
-        <div class="font-black text-gray-900 text-sm mb-1">KPI Dashboard</div>
-        <div class="text-xs text-gray-500">Charts & analytics</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="KPI Dashboard" data-to="Fakatahatahaʻanga KPI">KPI Dashboard</div>
+        <div class="text-xs text-gray-500" data-en="Charts &amp; analytics" data-to="Ngaahi siati mo fakamatala">Charts & analytics</div>
       </a>
       <a href="#events" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">🎉</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Ward Events</div>
-        <div class="text-xs text-gray-500">Calendar with invite-ready flags</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Ward Events" data-to="Ngāue ʻa e Uāti">Ward Events</div>
+        <div class="text-xs text-gray-500" data-en="Calendar with invite-ready flags" data-to="Kalena mo ngaahi fakaʻilonga fakaʻaluʻalu">Calendar with invite-ready flags</div>
       </a>
       <a href="#prayer" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">🙏</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Prayer List</div>
-        <div class="text-xs text-gray-500">Shared team prayer list</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Prayer List" data-to="Lēsōnē Lotú">Prayer List</div>
+        <div class="text-xs text-gray-500" data-en="Shared team prayer list" data-to="Lēsōnē lotú fakakatoa">Shared team prayer list</div>
       </a>
       <a href="#covenant" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">📖</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Covenant Path</div>
-        <div class="text-xs text-gray-500">Post-baptism ordinance tracking</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Covenant Path" data-to="Hala Fuakava">Covenant Path</div>
+        <div class="text-xs text-gray-500" data-en="Post-baptism ordinance tracking" data-to="Muimui ngaahi Ōlinesi hili papitaiso">Post-baptism ordinance tracking</div>
       </a>
       <a href="#report" class="glass rounded-2xl p-5 text-center hover:shadow-xl transition-all">
         <div class="text-4xl mb-3">📋</div>
-        <div class="font-black text-gray-900 text-sm mb-1">Ward Council Report</div>
-        <div class="text-xs text-gray-500">Auto-generated printable report</div>
+        <div class="font-black text-gray-900 text-sm mb-1" data-en="Ward Council Report" data-to="Lipoti Kaunisolo Uāti">Ward Council Report</div>
+        <div class="text-xs text-gray-500" data-en="Auto-generated printable report" data-to="Lipoti fakaʻautomate maʻu hano paʻaki">Auto-generated printable report</div>
       </a>
     </div>
   </div>
@@ -130,8 +133,8 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">1</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">Monthly Tracker</h2>
-        <p class="text-gray-600 text-lg">The main table where you log activity for each person every month. Switch between <strong>Investigators</strong> and <strong>Returning Members</strong> using the top tabs.</p>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="Monthly Tracker" data-to="Muimui Māhina">Monthly Tracker</h2>
+        <p class="text-gray-600 text-lg" data-en="The main table where you log activity for each person every month. Switch between &lt;strong&gt;Investigators&lt;/strong&gt; and &lt;strong&gt;Returning Members&lt;/strong&gt; using the top tabs." data-to="Ko e tepu lahi ʻoku ke tohi ai ʻa e ngāue ki he taha kotoa māhina kotoa. Liliu ʻi he &lt;strong&gt;Kau Fehuʻi&lt;/strong&gt; mo e &lt;strong&gt;Kau Foki Mai&lt;/strong&gt; ʻi he ngaahi tepi ʻi ʻolunga.">The main table where you log activity for each person every month. Switch between <strong>Investigators</strong> and <strong>Returning Members</strong> using the top tabs.</p>
       </div>
     </div>
 
@@ -189,7 +192,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-rose-500 to-red-600 text-white">2</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 Plan Column</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="📋 Plan Column" data-to="📋 Kolama Palani">📋 Plan Column</h2>
         <p class="text-gray-600 text-lg">Every person in the tracker has a <strong>Plan column</strong> — the four fields that turn the tracker from a scoreboard into a working tool. This is where you set ownership and next steps.</p>
       </div>
     </div>
@@ -284,7 +287,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-rose-600 to-red-700 text-white">3</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 This Week Tab</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="📋 This Week Tab" data-to="📋 Tepi ʻAhi Ni">📋 This Week Tab</h2>
         <p class="text-gray-600 text-lg">Your <strong>Sunday working document.</strong> Opens to every person sorted by urgency — overdue contacts at the top in red, then this week in yellow, upcoming in green, and no date set in gray. The tab shows a badge count of how many need action.</p>
       </div>
     </div>
@@ -355,7 +358,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-violet-600 to-purple-700 text-white">4</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">🗂️ Action Board</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="🗂️ Action Board" data-to="🗂️ Papa Ngāue">🗂️ Action Board</h2>
         <p class="text-gray-600 text-lg">The <strong>Sunday war-room view</strong> for ward council. Every person is automatically sorted into one of four columns based on their current status. No manual sorting needed — the app decides.</p>
       </div>
     </div>
@@ -413,17 +416,17 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">5</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">✨ Activity Indicators</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="✨ Activity Indicators" data-to="✨ Ngaahi Fakaʻilonga Ngāue">✨ Activity Indicators</h2>
         <p class="text-gray-600 text-lg">21 standardized activity codes you select when logging a month. Click any cell in the tracker to open the checklist. You can select multiple in one month.</p>
       </div>
     </div>
     <div class="grid md:grid-cols-2 gap-6 mb-8">
       <div class="glass rounded-2xl p-6">
-        <h3 class="font-black text-amber-700 mb-4">⛪ Gospel Activities</h3>
+        <h3 class="font-black text-amber-700 mb-4" data-en="⛪ Gospel Activities" data-to="⛪ Ngaahi Ngāue Ongoongolelei">⛪ Gospel Activities</h3>
         <div class="grid grid-cols-2 gap-2" id="indList1"></div>
       </div>
       <div class="glass rounded-2xl p-6">
-        <h3 class="font-black text-blue-700 mb-4">🤝 Fellowship & Contact</h3>
+        <h3 class="font-black text-blue-700 mb-4" data-en="🤝 Fellowship &amp; Contact" data-to="🤝 Feohi mo Fetuʻutaki">🤝 Fellowship & Contact</h3>
         <div class="grid grid-cols-2 gap-2" id="indList2"></div>
       </div>
     </div>
@@ -445,7 +448,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-purple-600 to-indigo-700 text-white">6</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">📖 Covenant Path</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="📖 Covenant Path" data-to="📖 Hala Fuakava">📖 Covenant Path</h2>
         <p class="text-gray-600 text-lg">Automatically appears below the tracker when someone is baptized. Tracks their post-baptism ordinance milestones and Self-Reliance courses.</p>
       </div>
     </div>
@@ -503,7 +506,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-amber-500 to-orange-600 text-white">7</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">📊 KPI Dashboard</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="📊 KPI Dashboard" data-to="📊 Fakatahatahaʻanga KPI">📊 KPI Dashboard</h2>
         <p class="text-gray-600 text-lg">Analytics and charts automatically calculated from your logged data. Switch between Investigators and Returning Members tabs to see separate dashboards.</p>
       </div>
     </div>
@@ -561,7 +564,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-green-600 to-emerald-700 text-white">8</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">🎉 Ward Events Calendar</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="🎉 Ward Events Calendar" data-to="🎉 Kalena Ngāue ʻa e Uāti">🎉 Ward Events Calendar</h2>
         <p class="text-gray-600 text-lg">Shared calendar synced in real-time. Events are visible to everyone with the app link. Use it to plan which ward activities to invite investigators to.</p>
       </div>
     </div>
@@ -613,14 +616,14 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-indigo-600 to-purple-700 text-white">9</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">🙏 Prayer List</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="🙏 Prayer List" data-to="🙏 Lēsōnē Lotú">🙏 Prayer List</h2>
         <p class="text-gray-600 text-lg">A shared team prayer list synced in real-time. Add names manually or use Quick Add to pull names directly from the tracker. Notes field for each person (e.g. "baptism date coming up", "answered prayer: attended church Sunday").</p>
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 mb-8">
       <div class="glass rounded-2xl p-6">
-        <h3 class="font-black text-gray-900 mb-4">How to Use It</h3>
+        <h3 class="font-black text-gray-900 mb-4" data-en="How to Use It" data-to="ʻOku Fēfē Hono Ngāue ʻaki">How to Use It</h3>
         <div class="space-y-3 text-sm text-gray-700">
           <div class="flex gap-2 items-start"><span>➕</span><div>Type a name in the input field and press Enter or tap "Add 🙏" to add them</div></div>
           <div class="flex gap-2 items-start"><span>⚡</span><div><strong>Quick Add from Tracker</strong> — Shows all named investigators/returning members not already on the list. One tap to add.</div></div>
@@ -656,7 +659,7 @@
     <div class="flex items-start gap-5 mb-10">
       <div class="step-dot bg-gradient-to-br from-amber-600 to-orange-700 text-white">10</div>
       <div>
-        <h2 class="text-3xl font-black text-gray-900 mb-2">📋 Ward Council Report</h2>
+        <h2 class="text-3xl font-black text-gray-900 mb-2" data-en="📋 Ward Council Report" data-to="📋 Lipoti Kaunisolo Uāti">📋 Ward Council Report</h2>
         <p class="text-gray-600 text-lg">Click <strong>"📋 Report"</strong> in the header bar to generate an instant report. Auto-fills with all live data. Use the Print button to bring a hard copy to ward council.</p>
       </div>
     </div>
@@ -702,37 +705,37 @@
 <!-- ── SECTION 11: BEST PRACTICES ─────────────────────── -->
 <section id="tips" class="py-24 px-4 bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 text-white">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-black text-center mb-4">Best Practices</h2>
+    <h2 class="text-4xl font-black text-center mb-4" data-en="Best Practices" data-to="Ngaahi Founga Lelei Taha">Best Practices</h2>
     <p class="text-center text-indigo-200 mb-12 font-semibold">How to get the most out of this tool</p>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">☀️</div>
-        <h3 class="font-black text-lg mb-2">Sunday Routine</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Sunday Routine" data-to="Founga ʻo e Sāpate">Sunday Routine</h3>
         <p class="text-indigo-200 text-sm">After sacrament — open This Week, mark everyone contacted, set next contact dates for the coming week. Takes 5 minutes.</p>
       </div>
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">👥</div>
-        <h3 class="font-black text-lg mb-2">Ward Council Prep</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Ward Council Prep" data-to="Teuteu ki he Kaunisolo Uāti">Ward Council Prep</h3>
         <p class="text-indigo-200 text-sm">Before council — pull up Action Board. Walk the four columns left to right. ⚡ Needs Attention names get a quick plan assigned before the meeting ends.</p>
       </div>
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">📝</div>
-        <h3 class="font-black text-lg mb-2">Write Real Next Actions</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Write Real Next Actions" data-to="Tohi Ngaahi Ngāue Hoko Moʻoni">Write Real Next Actions</h3>
         <p class="text-indigo-200 text-sm">Don't leave the Next Action field empty. "Follow up" is not an action. "Call Sione about the BBQ Thursday" is. Specific = done.</p>
       </div>
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">🔥</div>
-        <h3 class="font-black text-lg mb-2">Build Streaks</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Build Streaks" data-to="Langa Ngaahi Faka-ngāue">Build Streaks</h3>
         <p class="text-indigo-200 text-sm">The 🔥 streak badge is a quiet accountability tool. When a person has 3+ months of consecutive activity, people don't want to break it — use that psychology.</p>
       </div>
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">📤</div>
-        <h3 class="font-black text-lg mb-2">Export Weekly</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Export Weekly" data-to="Toʻo Fakatohi ʻi he Wiki">Export Weekly</h3>
         <p class="text-indigo-200 text-sm">Click 📥 Export every Sunday. Save the JSON backup to Google Drive or email it to yourself. Firebase is reliable, but local backups are your insurance.</p>
       </div>
       <div class="bg-white/10 border border-white/20 rounded-2xl p-5">
         <div class="text-3xl mb-3">🇹🇴</div>
-        <h3 class="font-black text-lg mb-2">Use Lea Tonga</h3>
+        <h3 class="font-black text-lg mb-2" data-en="Use Lea Tonga" data-to="Ngāue ʻaki ʻa e Lea Tonga">Use Lea Tonga</h3>
         <p class="text-indigo-200 text-sm">Toggle the 🇹🇴 Lea Tonga button for full Tongan translation. 200+ UI strings translated. Useful when presenting in ward council or sharing with Tongan-speaking members.</p>
       </div>
     </div>
@@ -742,7 +745,7 @@
 <!-- ── FAQ ─────────────────────────────────────────────── -->
 <section class="py-24 px-4 bg-white">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-black text-center text-indigo-900 mb-12">Common Questions</h2>
+    <h2 class="text-4xl font-black text-center text-indigo-900 mb-12" data-en="Common Questions" data-to="Ngaahi Fehuʻi Masani">Common Questions</h2>
     <div class="space-y-4" id="faqList"></div>
   </div>
 </section>
@@ -750,13 +753,13 @@
 <!-- ── FOOTER ──────────────────────────────────────────── -->
 <section class="py-20 px-4 bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 text-white text-center">
   <div class="text-7xl mb-6">📖</div>
-  <h2 class="text-3xl font-black mb-4">Remember Why We Do This</h2>
+  <h2 class="text-3xl font-black mb-4" data-en="Remember Why We Do This" data-to="Manatu ko e Hā ʻoku Tau Fai Ai Heni">Remember Why We Do This</h2>
   <div class="bg-white/15 rounded-2xl p-6 max-w-2xl mx-auto mb-8 border border-white/20">
     <p class="text-lg italic leading-relaxed mb-3">"For behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul"</p>
     <p class="text-indigo-300 text-sm">— Doctrine &amp; Covenants 4:4</p>
   </div>
-  <p class="text-indigo-200 mb-4">This tracker is a tool to bring souls unto Christ. May it bless your ward's missionary efforts.</p>
-  <div class="text-indigo-300 text-sm">Made with ❤️ for the Riverton 24th Tongan Ward</div>
+  <p class="text-indigo-200 mb-4" data-en="This tracker is a tool to bring souls unto Christ. May it bless your ward's missionary efforts." data-to="Ko e muimui ni ko ha meʻangāue ke ʻomi ai ʻa e ngaahi laumālie kia Kalaisi. ʻOfa ke tāpuekina ʻaki ʻa e ngāue misionale ʻo hoʻo uāti.">This tracker is a tool to bring souls unto Christ. May it bless your ward's missionary efforts.</p>
+  <div class="text-indigo-300 text-sm" data-en="Made with ❤️ for the Riverton 24th Tongan Ward" data-to="Ngaohi ʻaki ʻa e ❤️ maʻa e Uāti Tonga ko Riverton 24">Made with ❤️ for the Riverton 24th Tongan Ward</div>
 </section>
 
 <!-- Scroll to top -->
@@ -1237,6 +1240,121 @@ document.addEventListener('DOMContentLoaded', () => {
   const dateInput = document.getElementById('simDate');
   if (dateInput) dateInput.value = getDaysFromNow(5);
 });
+
+// ── TONGAN TRANSLATION ENGINE ────────────────────────────────────
+let guideLang = 'en';
+
+const GT = new Map([
+  [`Focus 5 Guide`, `Fakahinohino Focus 5`],
+  [`Open App →`, `Toʻo ʻa e App →`],
+  [`Lea Tonga`, `English`],
+  [`Focus 5 Missionary Tracker`, `Muimui ʻi he Nima — Kau Misionale`],
+  [`Complete User Guide — Riverton 24th Tongan Ward`, `Fakahinohino Kakato — Uāti Tonga ko Riverton 24`],
+  [`Complete User Guide — South Jordan 10th Tongan Ward`, `Fakahinohino Kakato — Uāti Tonga ko South Jordan 10`],
+  [`Updated with This Week, Action Board, Plan Column & more`, `Foʻou: ʻAhi Ni, Papa Ngāue, Kolama Palani & lahi ange`],
+  [`Start Guide ↓`, `Kamata Fakahinohino ↓`],
+  [`What's Inside This App`, `Ko e Hā ʻoku ʻi Loto ʻi he App Ni`],
+  [`8 interconnected tools — all in one file, synced in real-time via Firebase`, `Ngaahi meʻangāue 8 — kotoa ʻi he faile ʻe taha, fakafetaulaki taimi moʻoni`],
+  [`Monthly Tracker`, `Muimui Māhina`],
+  [`Log activities per person per month`, `Tohi ngāue ki he taha kotoa māhina kotoa`],
+  [`This Week`, `ʻAhi Ni`],
+  [`Who to contact and by when`, `Ko hai ke fetuʻutaki mo ia, pea ʻi ʻafeʻi`],
+  [`Action Board`, `Papa Ngāue`],
+  [`Kanban war-room for ward council`, `Papa ngāue ki he kaunisolo uāti`],
+  [`KPI Dashboard`, `Fakatahatahaʻanga KPI`],
+  [`Charts & analytics`, `Ngaahi siati mo fakamatala`],
+  [`Ward Events`, `Ngāue ʻa e Uāti`],
+  [`Calendar with invite-ready flags`, `Kalena mo ngaahi fakaʻilonga fakaʻaluʻalu`],
+  [`Prayer List`, `Lēsōnē Lotú`],
+  [`Shared team prayer list`, `Lēsōnē lotú fakakatoa`],
+  [`Covenant Path`, `Hala Fuakava`],
+  [`Post-baptism ordinance tracking`, `Muimui ngaahi Ōlinesi hili papitaiso`],
+  [`Ward Council Report`, `Lipoti Kaunisolo Uāti`],
+  [`Auto-generated printable report`, `Lipoti fakaʻautomate maʻu hano paʻaki`],
+  [`Monthly Tracker`, `Muimui Māhina`],
+  [`🔢 Quarterly vs Full Year View`, `🔢 Vahe Kuata mo e Taʻu Kotoa`],
+  [`👤 Name Cell — What's In It`, `👤 Seli Hingoa — Ko e Hā ʻoku ʻi Loto`],
+  [`📋 Plan Column`, `📋 Kolama Palani`],
+  [`Assign To (single dropdown)`, `Tuku Ki (fili ʻe taha)`],
+  [`Next Contact Date`, `ʻAho Fetuʻutaki Hoko`],
+  [`Next Action`, `Ngāue Hoko`],
+  [`Mark Contacted`, `Fakaʻilonga Fetuʻutaki`],
+  [`📋 This Week Tab`, `📋 Tepi ʻAhi Ni`],
+  [`🔍 Tab Filter`, `🔍 Sisitia Tepi`],
+  [`Use the filter buttons in the header to narrow the view:`, `Ngāue ʻaki ʻa e ngaahi meʻangāue sisitia ʻi he ʻuluʻi konga ke fakamāmāʻi ʻa e vakai:`],
+  [`⚡ Quick Actions on Each Card`, `⚡ Ngaahi Ngāue Vave ʻi he Kaati Kotoa`],
+  [`🗂️ Action Board`, `🗂️ Papa Ngāue`],
+  [`How Cards Are Auto-Sorted`, `ʻOku Fēfē Hono Fakatonutonu Aunoa ʻo e Ngaahi Kaati`],
+  [`✨ Activity Indicators`, `✨ Ngaahi Fakaʻilonga Ngāue`],
+  [`21 standardized activity codes you select when logging a month. Click any cell in the tracker to open the checklist. You can select multiple in one month.`, `Ngaahi kouti ngāue fakatuʻumaʻu ʻe 21 ʻoku ke fili ʻi he tohi māhina. Holoki ʻa e seli kotoa ʻi he muimui ke toʻo ʻa e lēsōnē.`],
+  [`⛪ Gospel Activities`, `⛪ Ngaahi Ngāue Ongoongolelei`],
+  [`🤝 Fellowship & Contact`, `🤝 Feohi mo Fetuʻutaki`],
+  [`📖 Covenant Path`, `📖 Hala Fuakava`],
+  [`Automatically appears below the tracker when someone is baptized. Tracks their post-baptism ordinance milestones and Self-Reliance courses.`, `Hāʻele aunoa ʻi lalo ʻo e muimui ʻi he papitaiso ʻa ha taha. Muimui honau ngaahi fakaʻilonga ōlinesi hili papitaiso mo ngaahi kosi Fiemālohi.`],
+  [`👔 Male Path`, `👔 Hala Tangata`],
+  [`🌸 Female Path`, `🌸 Hala Fefine`],
+  [`🕊️ OAY Path`, `🕊️ Hala OAY`],
+  [`💼 Self-Reliance Courses`, `💼 Ngaahi Kosi Fiemālohi`],
+  [`Completing Temple Endowment marks the person 🏆 Complete with a trophy badge.`, `Ko e faka-ʻosi ʻo e Temple Endowment ʻoku fakaʻilonga ai ʻa e taha 🏆 Kakato mo ha fakaʻilonga toputapu.`],
+  [`📊 KPI Dashboard`, `📊 Fakatahatahaʻanga KPI`],
+  [`Analytics and charts automatically calculated from your logged data. Switch between Investigators and Returning Members tabs to see separate dashboards.`, `Ngaahi fakamatala mo siati fakaʻautomate ʻi hoʻo ngaahi fakamatala tohi. Liliu ʻi he ngaahi tepi Kau Fehuʻi mo Kau Foki Mai ke sio ki ngaahi fakatahatahaʻanga kehekehe.`],
+  [`📈 Stat Cards (top row)`, `📈 Ngaahi Kaati Fika (laine ʻi ʻolunga)`],
+  [`📉 Chart Types`, `📉 Ngaahi ʻUluaki Siati`],
+  [`💡 How to Read the Dashboard in Ward Council`, `💡 ʻOku Fēfē Hono Lau ʻo e Fakatahatahaʻanga ʻi he Kaunisolo Uāti`],
+  [`🎉 Ward Events Calendar`, `🎉 Kalena Ngāue ʻa e Uāti`],
+  [`Shared calendar synced in real-time. Events are visible to everyone with the app link. Use it to plan which ward activities to invite investigators to.`, `Kalena fakakatoa fakafetaulaki taimi moʻoni. ʻOku mamata ki he ngaahi ngāue ko kinautolu kotoa ʻoku ʻi ai ʻa e hoko ʻo e app.`],
+  [`📅 Adding an Event`, `📅 Tānaki ha Ngāue`],
+  [`👁️ Two Views`, `👁️ Vakai ʻe Ua`],
+  [`🙏 Prayer List`, `🙏 Lēsōnē Lotú`],
+  [`A shared team prayer list synced in real-time. Add names manually or use Quick Add to pull names directly from the tracker.`, `Ko ha lēsōnē lotú fakakatoa fakafetaulaki taimi moʻoni. Tānaki ngaahi hingoa ʻa e tangata pe ngāue ʻaki ʻa e Tānaki Vave.`],
+  [`How to Use It`, `ʻOku Fēfē Hono Ngāue ʻaki`],
+  [`📋 Ward Council Report`, `📋 Lipoti Kaunisolo Uāti`],
+  [`Click "📋 Report" in the header bar to generate an instant report. Auto-fills with all live data. Use the Print button to bring a hard copy to ward council.`, `Holoki ʻa e "📋 Lipoti" ʻi he ʻuluʻi konga ke ngaohi ha lipoti vave. Fakafulufuluʻi aunoa ʻi he ngaahi fakamatala moʻui.`],
+  [`📄 What's In the Report`, `📄 Ko e Hā ʻoku ʻi he Lipoti`],
+  [`🖨️ Print & Share`, `🖨️ Paʻaki mo Vahevahe`],
+  [`Best Practices`, `Ngaahi Founga Lelei Taha`],
+  [`How to get the most out of this tool`, `ʻOku Fēfē Hono ʻAhi ʻo e Lelei Taha ʻo e Meʻangāue Ni`],
+  [`Sunday Routine`, `Founga ʻo e Sāpate`],
+  [`After sacrament — open This Week, mark everyone contacted, set next contact dates for the coming week. Takes 5 minutes.`, `Hili sakalamenti — toʻo ʻa e ʻAhi Ni, fakaʻilonga ʻa kinautolu kotoa naʻe fetuʻutaki, seti ngaahi ʻaho hoko ki he wiki hoko. ʻOku toʻo miniti ʻe 5.`],
+  [`Ward Council Prep`, `Teuteu ki he Kaunisolo Uāti`],
+  [`Before council — pull up Action Board. Walk the four columns left to right. ⚡ Needs Attention names get a quick plan assigned before the meeting ends.`, `Kimuʻa ʻi he kaunisolo — toʻo ʻa e Papa Ngāue. ʻEva ʻi he ngaahi kolama ʻe fā mei ʻangamui ki toʻomataʻu.`],
+  [`Write Real Next Actions`, `Tohi Ngaahi Ngāue Hoko Moʻoni`],
+  [`Build Streaks`, `Langa Ngaahi Faka-ngāue`],
+  [`The 🔥 streak badge is a quiet accountability tool. When a person has 3+ months of consecutive activity, people don't want to break it — use that psychology.`, `Ko e fakaʻilonga faka-ngāue 🔥 ko ha meʻangāue fatongia taʻetuʻi. ʻI he ʻi ai ha māhina ʻe 3+ fakahoko, ʻoku ʻikai fie maumauʻi ʻe he kakai — ngāue ʻaki ʻa e fakakaukau ko ia.`],
+  [`Export Weekly`, `Toʻo Fakatohi ʻi he Wiki`],
+  [`Use Lea Tonga`, `Ngāue ʻaki ʻa e Lea Tonga`],
+  [`Toggle the 🇹🇴 Lea Tonga button for full Tongan translation. 200+ UI strings translated. Useful when presenting in ward council or sharing with Tongan-speaking members.`, `Holoki ʻa e meʻangāue 🇹🇴 Lea Tonga ki ha liliu Tonga kakato. Ngaahi kupu UI ʻe 200+ kuo liliu. ʻAonga ʻi he fakaʻali ʻi he kaunisolo uāti.`],
+  [`Common Questions`, `Ngaahi Fehuʻi Masani`],
+  [`Remember Why We Do This`, `Manatu ko e Hā ʻoku Tau Fai Ai Heni`],
+  [`This tracker is a tool to bring souls unto Christ. May it bless your ward's missionary efforts.`, `Ko e muimui ni ko ha meʻangāue ke ʻomi ai ʻa e ngaahi laumālie kia Kalaisi. ʻOfa ke tāpuekina ʻaki ʻa e ngāue misionale ʻo hoʻo uāti.`],
+  [`Made with ❤️ for the Riverton 24th Tongan Ward`, `Ngaohi ʻaki ʻa e ❤️ maʻa e Uāti Tonga ko Riverton 24`],
+  [`Made with ❤️ for the South Jordan 10th Tongan Ward`, `Ngaohi ʻaki ʻa e ❤️ maʻa e Uāti Tonga ko South Jordan 10`],
+]);
+
+window.toggleGuideLang = () => {
+  guideLang = guideLang === 'en' ? 'to' : 'en';
+  const btn = document.getElementById('langBtnLabel');
+  const toggleBtn = document.getElementById('langToggleBtn');
+  if (btn) btn.textContent = guideLang === 'to' ? 'English' : 'Lea Tonga';
+  if (toggleBtn) toggleBtn.classList.toggle('bg-amber-50', guideLang==='to');
+  if (toggleBtn) toggleBtn.classList.toggle('border-amber-400', guideLang==='to');
+  applyGuideTranslations();
+  showToast(guideLang==='to' ? '🇹🇴 Kuo liliu ki he Lea Tonga!' : '🇬🇧 Switched to English!');
+};
+
+function applyGuideTranslations() {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const enText = el.getAttribute('data-en');
+    const toText = el.getAttribute('data-to');
+    if (guideLang === 'to' && toText) {
+      el.innerHTML = toText;
+    } else {
+      el.innerHTML = enText;
+    }
+  });
+  document.documentElement.lang = guideLang === 'to' ? 'to' : 'en';
+}
+
 </script>
 </body>
 </html>
